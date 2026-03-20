@@ -13,51 +13,72 @@ Candidate: Ibis
 - Stability 100
 - SIP 0
 
-Reference IDs (from `tables.json`): `AW_A`, `AW_B`, `AW_C`
+## Four-Phase Example
 
-## Awakening D: Bed (LOG)
+This example uses one d100 event roll per phase.
 
-- Player rolls 3d6: 4, 3, 2 = 9
-- The OS at 100% Stability: +1d20 -> 6
-- Total = 15 (Success Trap)
-- Stability change: +5% per die rolled (3 dice) -> +15
-- Clamp Stability to 100
-- Battery: 100 -> 95
+## Awakening Roll
 
-## Awakening O: Mirror (MSK)
+- d100: 9
+- Event: The lift stops on a floor that does not exist.
+- Probability: 0.10
+- Event deltas: Battery -8, Stability -10
 
-- Player rolls 2d6: 2, 1 = 3
-- The OS +1d20 -> 10
-- Total = 13 (Success Trap)
-- Stability +10
-- Battery: 95 -> 90
+State after phase:
 
-## Awakening W: Fuel (SNS)
+- Battery 92
+- Stability 90
+- SIP 0
+- Running probability: 0.10
 
-- Player rolls 1d6: 2
-- The OS +1d20 -> 4
-- Total = 6 (Glitch)
-- Stability -5
-- Battery: 90 -> 85
+## Journey
 
-## End of Awakening Summary
+- d100: 41
+- Event: A street vendor calls you Candidate.
+- Probability: 0.25
+- Event deltas: Battery -7, Stability -6
 
-- Battery: 85
-- Stability: 95
-- SIP: 0
-- Next season: Journey (`CM_D`, `CM_E`, `CM_F`)
+State after phase:
 
-Continue through all stations.
+- Battery 85
+- Stability 84
+- SIP 0
+- Running probability: 0.10 x 0.25 = 0.025 (2.5%)
 
-At end of loop:
+## Interview
 
-- Commute Back (`RT_G`) uses Exhaustion: max dice is `ceil(Battery / 20)` for that check only.
-- Recharge (`RT_H`): roll d100. If it is higher than current Battery, next-loop Battery becomes that value.
-- Receipt Printing (`RT_I`): record final Battery, final Stability, total Successes, and total Glitches.
-- If Stability is above 0%, loop resets and SIP +1.
-- If Stability is 0%, the loop breaks.
+- d100: 76
+- Event: A car slows to a crawl beside you.
+- Probability: 0.50
+- Event deltas: Battery -5, Stability -3
 
-Loop carryover example:
+Ibis chooses Compliance in this phase to maintain Stability:
 
-- End Loop 1 with Stability above 0% -> reset to next loop and SIP becomes 1.
-- Spend SIP at any future objective to negate one OS roll.
+- Compliance deltas: Battery -5, Stability +5
+
+State after phase:
+
+- Battery 75
+- Stability 86
+- SIP 0
+- Running probability: 0.025 x 0.50 = 0.0125 (1.25%)
+
+## Return
+
+- d100: 98
+- Event: The OS speaks directly to you.
+- Probability: 0.10
+- Event deltas: Battery -8, Stability -10
+
+Running probability becomes:
+
+- 0.0125 x 0.10 = 0.00125 (0.125%)
+
+This is above the 0.1% threshold, so no anomaly trigger applies this loop.
+
+## What This Example Shows
+
+- The loop uses exactly four d100 rolls.
+- Battery and Stability move with event metadata.
+- Compliance can trade Battery for short-term Stability maintenance.
+- Probability can approach zero but still resist collapse into 0%.

@@ -1,57 +1,50 @@
 ---
 layout: page
-title: Game Tables Spec
+title: Game Data Notes
 permalink: /tables-spec/
 ---
 
-This page defines the structured data that the companion program will embed.
+This page documents the active JSON schema used by both the zine and the planned companion app.
 
-## Schema Summary
+## Schema Overview
 
-- `schema_version`: version pin for parser compatibility
-- `core_rules`: fixed constants for DC, battery, stability, and loop behavior
-- `pools`: stat labels and character creation constraints
-- `sip_rules`: persistent SIP economy rules
-- `os_table`: stability range lookup for The OS die behavior
-- `random_flavor_tables`: optional prompt generators for Success flavor and Glitch events
-- `seasons`: ordered season list with objective IDs
-- `objective_catalog`: normalized objective definitions keyed by unique IDs
+- `schema_version`
+- `game_metadata`
+- `character`
+- `rules`
+- `random_events`
+- `lore`
 
-Unique objective IDs are season-scoped to avoid collisions.
+## Key Rule Payloads
 
-- `AW_*` = Awakening
-- `CM_*` = Journey
-- `IN_*` = Interview
-- `RT_*` = Return
+- Loop cadence: one d100 event per phase, four phases per loop.
+- Battery hindrance: hard stop when Battery reaches 0.
+- Stability maintenance: Compliance restore (`Battery -5`, `Stability +5`) once per phase.
+- Probability threshold: trigger when running product reaches `<= 0.1%`.
+- Threshold effect: apply both `Stability -10` and `SIP +1`.
 
-Each objective includes:
+## Random Event Data
 
-- display `symbol` (D/O/W, G/L/Y, S/T/A/R, B/U/M)
-- display `name`
-- `season_id`
-- suggested `default_pool`
-- `pool_options`
-- optional `prompt_die` + `prompts`
-- optional `special_check` metadata (Interview Result, Return Recharge, Return Receipt Printing)
+`random_events.events` contains 100 indexed entries.
 
-Return station specifics:
+Each event entry includes:
 
-- `RT_G` (Commute Back) is the only check that applies Exhaustion dice capping.
-- `RT_H` (Recharge) is a d100 check with battery carryover rules.
-- `RT_I` (Receipt Printing) records loop summary output, including Success and Glitch counts.
+- `roll`
+- `prompt`
+- `category`
+- `default_probability`
+- `battery_delta`
+- `stability_delta`
+- `tags`
 
-Random flavor specifics:
+## Companion App Target
 
-- `architecture_of_success` uses d12 and is split by pool (`msk`, `sns`, `log`).
-- `big_book_of_glitches` uses d20 when total equals DC and applies a Stability penalty.
+This schema supports:
 
-## Data Targets
+- d100 event rolling
+- stat updates per event
+- running probability calculation
+- threshold trigger detection
+- loop receipt generation
 
-- `seasons`
-- `objective_catalog`
-- `os_table`
-- `random_flavor_tables`
-- `core_rules`
-- `sip_rules`
-
-See `_data/tables.json` for the machine-readable source of truth.
+Implementation-ready payload examples are in [Companion App Contract](/companion-app-contract/).

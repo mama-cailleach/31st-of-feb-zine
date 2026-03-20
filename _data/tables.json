@@ -1,374 +1,1467 @@
-{
-  "schema_version": "1.2.0",
-  "game_id": "31st-of-february",
-  "core_rules": {
-    "dc": 13,
-    "objective_battery_cost": 5,
-    "stability_step_per_die": 5,
-    "exhaustion_divisor": 20,
-    "exhaustion_applies_to": ["RT_G"],
-    "recharge_roll": "d100",
-    "recharge_rule": "If recharge roll is higher than current Battery, set next-loop Battery to the roll.",
-    "loop_reset_mode": "auto",
-    "loop_break_condition": "stability_zero",
-    "stability_floor": 0,
-    "stability_ceiling": 100,
-    "battery_floor": 0,
-    "battery_ceiling": 100
-  },
-  "pools": {
-    "msk": {
-      "label": "Masking",
-      "description": "Performing the expected self"
-    },
-    "sns": {
-      "label": "Sensory",
-      "description": "Processing noise and body load"
-    },
-    "log": {
-      "label": "Logic",
-      "description": "Systems, routines, literal truths"
-    },
-    "creation_values": [1, 2, 3],
-    "assignment_mode": "assign_once"
-  },
-  "sip_rules": {
-    "start": 0,
-    "gain_per_completed_loop": 1,
-    "negates_os_roll": true,
-    "persists_across_loops": true
-  },
-  "os_table": [
-    {
-      "min_stability": 90,
-      "max_stability": 100,
-      "die": "+1d20",
-      "effect": "forces perfection"
-    },
-    {
-      "min_stability": 70,
-      "max_stability": 89,
-      "die": "+1d12",
-      "effect": "simulation flickers"
-    },
-    {
-      "min_stability": 50,
-      "max_stability": 69,
-      "die": "+1d8",
-      "effect": "simulation degrades"
-    },
-    {
-      "min_stability": 40,
-      "max_stability": 49,
-      "die": "0",
-      "effect": "no smoothing"
-    },
-    {
-      "min_stability": 21,
-      "max_stability": 39,
-      "die": "-1d6",
-      "effect": "active sabotage"
-    },
-    {
-      "min_stability": 10,
-      "max_stability": 20,
-      "die": "-1d8",
-      "effect": "reality melts"
-    },
-    {
-      "min_stability": 0,
-      "max_stability": 9,
-      "die": "-1d20",
-      "effect": "system failure"
-    }
-  ],
-  "seasons": [
-    {
-      "id": "awakening",
-      "label": "Awakening",
-      "order": 1,
-      "objectives": ["AW_A", "AW_B", "AW_C"]
-    },
-    {
-      "id": "commute",
-      "label": "Journey",
-      "order": 2,
-      "objectives": ["CM_D", "CM_E", "CM_F"]
-    },
-    {
-      "id": "interview",
-      "label": "Interview",
-      "order": 3,
-      "objectives": ["IN_S", "IN_T", "IN_A", "IN_R"]
-    },
-    {
-      "id": "return",
-      "label": "Return",
-      "order": 4,
-      "objectives": ["RT_G", "RT_H", "RT_I"]
-    }
-  ],
-  "objective_catalog": {
-    "AW_A": {
-      "symbol": "D",
-      "name": "Bed",
-      "season_id": "awakening",
-      "default_pool": "sns",
-      "pool_options": ["msk", "sns", "log"],
-      "prompt_die": "d6",
-      "prompts": [
-        "You wake from a loop memory and lose your words.",
-        "You stay still and count mechanical sounds in the room.",
-        "You miss an alarm but gain a moment of quiet focus.",
-        "You wake on schedule and perform the script cleanly.",
-        "You wake with static in your ears and immediate overload.",
-        "You wake with unusual clarity and name one true need."
-      ]
-    },
-    "AW_B": {
-      "symbol": "O",
-      "name": "Mirror",
-      "season_id": "awakening",
-      "default_pool": "msk",
-      "pool_options": ["msk", "sns", "log"],
-      "prompt_die": "d6",
-      "prompts": [
-        "You do the expected face and hate how easy it is.",
-        "You practice one sentence until it sounds borrowed.",
-        "You skip eye contact and gain a private breath.",
-        "You choose a comfort item over strict appearance rules.",
-        "You over-correct and lock into persona mode.",
-        "You let one visible glitch stay visible."
-      ]
-    },
-    "AW_C": {
-      "symbol": "W",
-      "name": "Fuel",
-      "season_id": "awakening",
-      "default_pool": "sns",
-      "pool_options": ["msk", "sns", "log"],
-      "prompt_die": "d6",
-      "prompts": [
-        "You forget to eat and run on friction.",
-        "You eat a safe food and steady your hands.",
-        "You attempt a new texture and regret it instantly.",
-        "You over-caffeinate and sharpen too hard.",
-        "You hydrate and recover one small thread of focus.",
-        "You eat slowly and feel almost present."
-      ]
-    },
-    "CM_D": {
-      "symbol": "G",
-      "name": "Connection",
-      "season_id": "commute",
-      "default_pool": "log",
-      "pool_options": ["msk", "sns", "log"],
-      "prompt_die": "d6",
-      "prompts": [
-        "A delay collapses your timing and rewrites your route.",
-        "You find a quiet transfer and protect your focus.",
-        "A notification storm fractures your planning.",
-        "You follow your map perfectly and feel strangely hollow.",
-        "You miss a turn and discover a calmer path.",
-        "You sync with the flow and arrive with spare energy."
-      ]
-    },
-    "CM_E": {
-      "symbol": "L",
-      "name": "Interaction",
-      "season_id": "commute",
-      "default_pool": "msk",
-      "pool_options": ["msk", "sns", "log"],
-      "prompt_die": "d6",
-      "prompts": [
-        "A stranger requests small talk and your script lags.",
-        "You answer minimally and preserve your bandwidth.",
-        "You mask hard and get praised for being easy.",
-        "You set one boundary and the world does not end.",
-        "A misunderstanding escalates and you over-explain.",
-        "You find one kind person and borrow their calm."
-      ]
-    },
-    "CM_F": {
-      "symbol": "Y",
-      "name": "Environment",
-      "season_id": "commute",
-      "default_pool": "sns",
-      "pool_options": ["msk", "sns", "log"],
-      "prompt_die": "d6",
-      "prompts": [
-        "Lighting hum drills into your concentration.",
-        "Temperature mismatch puts your body on alert.",
-        "You secure a tolerable corner and regulate quickly.",
-        "Sudden noise spike derails your sequence memory.",
-        "You use a sensory tool and reduce overload.",
-        "Conditions stay stable long enough to think clearly."
-      ]
-    },
-    "IN_S": {
-      "symbol": "S",
-      "name": "Situation",
-      "season_id": "interview",
-      "default_pool": "log",
-      "pool_options": ["msk", "sns", "log"],
-      "prompt_die": "d6",
-      "prompts": [
-        "The interviewer asks for an origin story you have rehearsed too many times.",
-        "The room layout disorients your body before the first question lands.",
-        "You are asked a vague behavioral question with no clear scope.",
-        "A technical prompt appears and your pattern-recognition ignites.",
-        "A contradiction appears between the role and the description.",
-        "You are asked why you want this role, and the true answer is dangerous."
-      ]
-    },
-    "IN_T": {
-      "symbol": "T",
-      "name": "Task",
-      "season_id": "interview",
-      "default_pool": "log",
-      "pool_options": ["msk", "sns", "log"],
-      "prompt_die": "d6",
-      "prompts": [
-        "Translate your real process into market-safe language.",
-        "Prioritize three urgent requests with incomplete context.",
-        "Explain a conflict while avoiding blame language.",
-        "Solve a logic puzzle while being observed.",
-        "Defend a boundary without sounding resistant.",
-        "Reframe a shutdown as a strategic pause."
-      ]
-    },
-    "IN_A": {
-      "symbol": "A",
-      "name": "Action",
-      "season_id": "interview",
-      "default_pool": "msk",
-      "pool_options": ["msk", "sns", "log"],
-      "prompt_die": "d6",
-      "prompts": [
-        "You perform the expected answer exactly and lose yourself in it.",
-        "You provide a literal answer and create productive tension.",
-        "You over-mask, then forget the core point.",
-        "You name one concrete method and regain control.",
-        "You disclose a need and gamble on honesty.",
-        "You improvise a hybrid answer and surprise everyone, including yourself."
-      ]
-    },
-    "IN_R": {
-      "symbol": "R",
-      "name": "Result",
-      "season_id": "interview",
-      "special_check": "d100_plus_d100_below_stability",
-      "result_check_mode": "below_stability_is_safe",
-      "rules_text": "Roll d100 (Player) + d100 (The OS). Below current Stability is safe; equal or above glitches."
-    },
-    "RT_G": {
-      "symbol": "B",
-      "name": "Commute Back",
-      "season_id": "return",
-      "default_pool": "sns",
-      "pool_options": ["msk", "sns", "log"],
-      "exhaustion_applies": true,
-      "prompt_die": "d6",
-      "prompts": [
-        "You replay every sentence and cannot stop auditing.",
-        "You detach from memory and navigate on pure routine.",
-        "A delay forces unplanned contact.",
-        "You find silence and your nervous system descends one level.",
-        "You doom-scroll and consume your remaining focus.",
-        "You choose stillness over stimulation and recover slightly."
-      ]
-    },
-    "RT_H": {
-      "symbol": "U",
-      "name": "Recharge",
-      "season_id": "return",
-      "special_check": "d100_recharge",
-      "recharge_mode": "if_roll_higher_set_next_loop_battery",
-      "rules_text": "Roll d100 at loop end. If the roll is higher than current Battery, next-loop Battery becomes that roll."
-    },
-    "RT_I": {
-      "symbol": "M",
-      "name": "Receipt Printing",
-      "season_id": "return",
-      "special_check": "loop_receipt_summary",
-      "rules_text": "Record loop summary with final Battery, final Stability, total Successes, and total Glitches."
-    }
-  },
-  "random_flavor_tables": {
-    "architecture_of_success": {
-      "die": "d12",
-      "description": "When you succeed, roll on the matching pool table to see how The OS renders your victory.",
-      "tables": {
-        "msk": [
-          "Perfect micro-expression.",
-          "Charismatic Auto-Fill.",
-          "Uncannily pleasant tone.",
-          "The Ideal Citizen aura.",
-          "Narrative-grade charm.",
-          "Flawless social script.",
-          "Mimicry: 100% Match.",
-          "Emotional firewall active.",
-          "Subject is Invisible.",
-          "High-fidelity skin render.",
-          "Persuasion.exe success.",
-          "Script-perfect smile, zero seams visible."
-        ],
-        "sns": [
-          "Frame-perfect movement.",
-          "Weightless coordination.",
-          "Heightened reaction time.",
-          "Sensory overclock.",
-          "Spatial awareness +100%.",
-          "Muscle-memory override.",
-          "Impact dampening.",
-          "Kinetic energy recovery.",
-          "Zero-latency motion.",
-          "Precision equilibrium.",
-          "Surface-tension grip.",
-          "Noise-cancelled calm, every signal in phase."
-        ],
-        "log": [
-          "Elegant code-path found.",
-          "Data-stream clarity.",
-          "Occams Razor solution.",
-          "System-wide efficiency.",
-          "Pattern recognition lock.",
-          "Probability manipulation.",
-          "Logical Short-Circuit.",
-          "Optimized resource use.",
-          "Root-access intuition.",
-          "Algorithm bypass.",
-          "Multi-threaded thought.",
-          "Self-healing plan compiles on first run."
-        ]
-      }
-    },
-    "big_book_of_glitches": {
-      "die": "d20",
-      "trigger": "total_equals_dc",
-      "stability_penalty": 10,
-      "entries": [
-        "TEXTURE LOSS: An object you touch turns into a bright pink missing grid.",
-        "VOICE DELAY: Your words appear as subtitles in the air before you speak them.",
-        "LOD ERROR: People farther than 5 feet away become low-poly, faceless shapes.",
-        "CLIP-THRU: You momentarily sink ankle-deep into the solid floor.",
-        "GHOST INPUT: Your hand moves to do something your mind did not command.",
-        "SOUND LEAK: You hear the background music of the simulation as loud white noise.",
-        "SENSORY SWAP: You smell the color blue or see the sound of the bus.",
-        "TIME JUMP: You teleport 10 feet forward with no memory of the steps.",
-        "ASSET FLIP: A common object is replaced by a strange item.",
-        "THE VOID-EYE: For a split second, everyones eyes turn into black pits.",
-        "SKY-BOX TEAR: Looking up reveals the sky is a flat, flickering image file.",
-        "DUPLICATION: There are two of the same person standing next to each other.",
-        "GRAVITY SPIKE: Everything suddenly feels five times heavier for one minute.",
-        "STATIC BREATH: When you exhale, gray digital dust falls from your mouth.",
-        "UI INTERFERENCE: A Low Battery or Error 404 warning floats in your vision.",
-        "MIND-LOOP: You repeat the last sentence you said three times involuntarily.",
-        "STUTTER-STEP: You are stuck in a walking animation but are not moving.",
-        "THE MONITOR: You see a giant, pixelated eye watching from a window.",
-        "DATA BLEED: Fragments of another candidates memory overlay your own for a moment.",
-        "KERNEL PANIC: The scene freezes, alarms blare, and the loop hard-resets with no transition."
-      ]
-    }
-  }
+﻿{
+    "schema_version":  "3.0.0",
+    "game_metadata":  {
+                          "title":  "31st of February",
+                          "subtitle":  "Success Probability 0%",
+                          "game_id":  "31st-of-february",
+                          "jam_prompt":  "Success Probability 0%",
+                          "description":  "A solo glitch-loop RPG played through a zine and future companion app."
+                      },
+    "character":  {
+                      "attributes":  [
+                                         {
+                                             "id":  "msk",
+                                             "label":  "MSK",
+                                             "full_name":  "Masking",
+                                             "description":  "Performing expected behaviours, social scripts, and facade maintenance."
+                                         },
+                                         {
+                                             "id":  "sns",
+                                             "label":  "SNS",
+                                             "full_name":  "Sensory",
+                                             "description":  "Processing noise, movement, overstimulation, and shifting focus."
+                                         },
+                                         {
+                                             "id":  "log",
+                                             "label":  "LOG",
+                                             "full_name":  "Logic",
+                                             "description":  "Systems thinking, routines, literal interpretation, structured reasoning."
+                                         }
+                                     ],
+                      "vital_signs":  [
+                                          {
+                                              "id":  "battery",
+                                              "label":  "Battery",
+                                              "start":  100,
+                                              "min":  0,
+                                              "max":  100,
+                                              "description":  "Remaining energy. At 0, the current loop phase ends immediately."
+                                          },
+                                          {
+                                              "id":  "stability",
+                                              "label":  "Stability",
+                                              "start":  100,
+                                              "min":  0,
+                                              "max":  100,
+                                              "description":  "Proximity to breaking the simulation pattern."
+                                          },
+                                          {
+                                              "id":  "sip",
+                                              "label":  "SIP",
+                                              "full_name":  "Special Interest Points",
+                                              "start":  0,
+                                              "min":  0,
+                                              "description":  "Moments of agency and self-directed action."
+                                          }
+                                      ]
+                  },
+    "rules":  {
+                  "loop":  {
+                               "event_rolls_per_loop":  4,
+                               "roll_mode":  "one_d100_per_phase",
+                               "phases":  [
+                                              {
+                                                  "id":  "awakening",
+                                                  "order":  1,
+                                                  "name":  "Awakening"
+                                              },
+                                              {
+                                                  "id":  "journey",
+                                                  "order":  2,
+                                                  "name":  "Journey"
+                                              },
+                                              {
+                                                  "id":  "interview",
+                                                  "order":  3,
+                                                  "name":  "Interview"
+                                              },
+                                              {
+                                                  "id":  "return",
+                                                  "order":  4,
+                                                  "name":  "Return"
+                                              }
+                                          ],
+                               "end_conditions":  [
+                                                      "return_phase_complete",
+                                                      "battery_zero_hard_stop"
+                                                  ]
+                           },
+                  "battery":  {
+                                  "hard_stop_at_zero":  true,
+                                  "apply_event_delta":  true
+                              },
+                  "stability_maintenance":  {
+                                                "compliance_restore":  {
+                                                                           "usage":  "once_per_phase",
+                                                                           "battery_delta":  -5,
+                                                                           "stability_delta":  5,
+                                                                           "stability_cap":  100
+                                                                       }
+                                            },
+                  "sip":  {
+                              "gain_rule":  "gain_when_self_directed_choice_opposes_expected_script"
+                          },
+                  "probability":  {
+                                      "calculation":  "product_of_rolled_event_probabilities",
+                                      "target":  "0_percent",
+                                      "target_is_reachable":  false,
+                                      "threshold_percent":  0.1,
+                                      "threshold_decimal":  0.001,
+                                      "threshold_condition":  "running_probability_lte_threshold",
+                                      "threshold_effect":  {
+                                                               "stability_delta":  -10,
+                                                               "sip_delta":  1
+                                                           }
+                                  }
+              },
+    "random_events":  {
+                          "table_size":  100,
+                          "categories":  [
+                                             {
+                                                 "id":  "glitchy_impossible",
+                                                 "default_probability":  0.1,
+                                                 "default_battery_delta":  -8,
+                                                 "default_stability_delta":  -10
+                                             },
+                                             {
+                                                 "id":  "unusual_deviant",
+                                                 "default_probability":  0.25,
+                                                 "default_battery_delta":  -7,
+                                                 "default_stability_delta":  -6
+                                             },
+                                             {
+                                                 "id":  "slightly_odd",
+                                                 "default_probability":  0.5,
+                                                 "default_battery_delta":  -5,
+                                                 "default_stability_delta":  -3
+                                             },
+                                             {
+                                                 "id":  "mundane_scripted",
+                                                 "default_probability":  0.8,
+                                                 "default_battery_delta":  -4,
+                                                 "default_stability_delta":  0
+                                             }
+                                         ],
+                          "events":  [
+                                         {
+                                             "roll":  1,
+                                             "prompt":  "Alarm rings at the wrong time.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  2,
+                                             "prompt":  "Coffee machine stalls mid-brew.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  3,
+                                             "prompt":  "A neighbour waves too enthusiastically.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  4,
+                                             "prompt":  "Your reflection lags behind your movement.",
+                                             "category":  "glitchy_impossible",
+                                             "default_probability":  0.1,
+                                             "battery_delta":  -8,
+                                             "stability_delta":  -10,
+                                             "tags":  [
+                                                          "glitchy_impossible",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  5,
+                                             "prompt":  "A bus arrives early for the first time ever.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  6,
+                                             "prompt":  "A stranger asks if you remember them.",
+                                             "category":  "unusual_deviant",
+                                             "default_probability":  0.25,
+                                             "battery_delta":  -7,
+                                             "stability_delta":  -6,
+                                             "tags":  [
+                                                          "unusual_deviant",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  7,
+                                             "prompt":  "Your phone displays yesterday\u0027s notifications.",
+                                             "category":  "glitchy_impossible",
+                                             "default_probability":  0.1,
+                                             "battery_delta":  -8,
+                                             "stability_delta":  -10,
+                                             "tags":  [
+                                                          "glitchy_impossible",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  8,
+                                             "prompt":  "A bird lands and stares directly at you.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  9,
+                                             "prompt":  "The lift stops on a floor that doesn\u0027t exist.",
+                                             "category":  "glitchy_impossible",
+                                             "default_probability":  0.1,
+                                             "battery_delta":  -8,
+                                             "stability_delta":  -10,
+                                             "tags":  [
+                                                          "glitchy_impossible",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  10,
+                                             "prompt":  "A coworker greets you by the wrong name.",
+                                             "category":  "unusual_deviant",
+                                             "default_probability":  0.25,
+                                             "battery_delta":  -7,
+                                             "stability_delta":  -6,
+                                             "tags":  [
+                                                          "unusual_deviant",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  11,
+                                             "prompt":  "The streetlights flicker in a pattern.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  12,
+                                             "prompt":  "A child points at you and laughs.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  13,
+                                             "prompt":  "A shop door refuses to open for you.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  14,
+                                             "prompt":  "A dog barks exactly three times as you pass.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  15,
+                                             "prompt":  "Your shoelace unravels on its own.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  16,
+                                             "prompt":  "A cyclist nearly clips you, then apologises in slow motion.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  17,
+                                             "prompt":  "A billboard displays your face.",
+                                             "category":  "glitchy_impossible",
+                                             "default_probability":  0.1,
+                                             "battery_delta":  -8,
+                                             "stability_delta":  -10,
+                                             "tags":  [
+                                                          "glitchy_impossible",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  18,
+                                             "prompt":  "A busker plays a tune you recognise from a dream.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  19,
+                                             "prompt":  "A vending machine dispenses two items.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  20,
+                                             "prompt":  "A stranger hands you a folded note.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  21,
+                                             "prompt":  "A pigeon walks in perfect sync with you.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  22,
+                                             "prompt":  "A car alarm triggers as you look at it.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  23,
+                                             "prompt":  "A street sign is spelled differently today.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  24,
+                                             "prompt":  "A shop assistant insists you were just there.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  25,
+                                             "prompt":  "A gust of wind knocks something from your pocket.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  26,
+                                             "prompt":  "A pedestrian stops and blocks your path.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  27,
+                                             "prompt":  "A taxi splashes water onto your shoes.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  28,
+                                             "prompt":  "A cyclist circles you once before leaving.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  29,
+                                             "prompt":  "A bus driver refuses to make eye contact.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  30,
+                                             "prompt":  "A child drops a toy at your feet.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  31,
+                                             "prompt":  "A stranger compliments your shoes.",
+                                             "category":  "mundane_scripted",
+                                             "default_probability":  0.8,
+                                             "battery_delta":  -4,
+                                             "stability_delta":  0,
+                                             "tags":  [
+                                                          "mundane_scripted",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  32,
+                                             "prompt":  "A street performer freezes when you look.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  33,
+                                             "prompt":  "A shop window shows a different outfit on you.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  34,
+                                             "prompt":  "A dog follows you for one block.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  35,
+                                             "prompt":  "A cyclist shouts a warning too late.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  36,
+                                             "prompt":  "A stranger asks for directions you don\u0027t know.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  37,
+                                             "prompt":  "A bus stop display glitches.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  38,
+                                             "prompt":  "A shop door opens before you touch it.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  39,
+                                             "prompt":  "A pedestrian bumps into you without noticing.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  40,
+                                             "prompt":  "A car slows down beside you.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  41,
+                                             "prompt":  "A street vendor calls you Candidate.",
+                                             "category":  "unusual_deviant",
+                                             "default_probability":  0.25,
+                                             "battery_delta":  -7,
+                                             "stability_delta":  -6,
+                                             "tags":  [
+                                                          "unusual_deviant",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  42,
+                                             "prompt":  "A pigeon drops a feather at your feet.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  43,
+                                             "prompt":  "A stranger hands you a flyer with no text.",
+                                             "category":  "unusual_deviant",
+                                             "default_probability":  0.25,
+                                             "battery_delta":  -7,
+                                             "stability_delta":  -6,
+                                             "tags":  [
+                                                          "unusual_deviant",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  44,
+                                             "prompt":  "A busker stops playing as you pass.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  45,
+                                             "prompt":  "A cyclist rings their bell repeatedly.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  46,
+                                             "prompt":  "A shop assistant stares too long.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  47,
+                                             "prompt":  "A pedestrian mirrors your steps.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  48,
+                                             "prompt":  "A car honks exactly twice.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  49,
+                                             "prompt":  "A street sign rotates slightly.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  50,
+                                             "prompt":  "A stranger whispers something you can\u0027t hear.",
+                                             "category":  "unusual_deviant",
+                                             "default_probability":  0.25,
+                                             "battery_delta":  -7,
+                                             "stability_delta":  -6,
+                                             "tags":  [
+                                                          "unusual_deviant",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  51,
+                                             "prompt":  "A bus arrives empty.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  52,
+                                             "prompt":  "A dog growls softly as you pass.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  53,
+                                             "prompt":  "A cyclist swerves around you dramatically.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  54,
+                                             "prompt":  "A shop window shows a different weather.",
+                                             "category":  "glitchy_impossible",
+                                             "default_probability":  0.1,
+                                             "battery_delta":  -8,
+                                             "stability_delta":  -10,
+                                             "tags":  [
+                                                          "glitchy_impossible",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  55,
+                                             "prompt":  "A pedestrian drops their bag.",
+                                             "category":  "mundane_scripted",
+                                             "default_probability":  0.8,
+                                             "battery_delta":  -4,
+                                             "stability_delta":  0,
+                                             "tags":  [
+                                                          "mundane_scripted",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  56,
+                                             "prompt":  "A car door opens suddenly.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  57,
+                                             "prompt":  "A street vendor offers you something for free.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  58,
+                                             "prompt":  "A pigeon lands on your shoulder briefly.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  59,
+                                             "prompt":  "A stranger asks if you\u0027re ready.",
+                                             "category":  "unusual_deviant",
+                                             "default_probability":  0.25,
+                                             "battery_delta":  -7,
+                                             "stability_delta":  -6,
+                                             "tags":  [
+                                                          "unusual_deviant",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  60,
+                                             "prompt":  "A busker plays a discordant note.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  61,
+                                             "prompt":  "A cyclist stops to adjust their wheel.",
+                                             "category":  "mundane_scripted",
+                                             "default_probability":  0.8,
+                                             "battery_delta":  -4,
+                                             "stability_delta":  0,
+                                             "tags":  [
+                                                          "mundane_scripted",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  62,
+                                             "prompt":  "A shop assistant gives you the wrong change.",
+                                             "category":  "mundane_scripted",
+                                             "default_probability":  0.8,
+                                             "battery_delta":  -4,
+                                             "stability_delta":  0,
+                                             "tags":  [
+                                                          "mundane_scripted",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  63,
+                                             "prompt":  "A pedestrian walks backwards.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  64,
+                                             "prompt":  "A car\u0027s headlights flicker.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  65,
+                                             "prompt":  "A street sign is upside down.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  66,
+                                             "prompt":  "A stranger hands you a pen.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  67,
+                                             "prompt":  "A dog barks once, loudly.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  68,
+                                             "prompt":  "A cyclist drops something as they pass.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  69,
+                                             "prompt":  "A shop window shows a glitching reflection.",
+                                             "category":  "glitchy_impossible",
+                                             "default_probability":  0.1,
+                                             "battery_delta":  -8,
+                                             "stability_delta":  -10,
+                                             "tags":  [
+                                                          "glitchy_impossible",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  70,
+                                             "prompt":  "A pedestrian waves at you.",
+                                             "category":  "mundane_scripted",
+                                             "default_probability":  0.8,
+                                             "battery_delta":  -4,
+                                             "stability_delta":  0,
+                                             "tags":  [
+                                                          "mundane_scripted",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  71,
+                                             "prompt":  "A car alarm stops abruptly.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  72,
+                                             "prompt":  "A street vendor calls you by name.",
+                                             "category":  "unusual_deviant",
+                                             "default_probability":  0.25,
+                                             "battery_delta":  -7,
+                                             "stability_delta":  -6,
+                                             "tags":  [
+                                                          "unusual_deviant",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  73,
+                                             "prompt":  "A pigeon blocks your path.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  74,
+                                             "prompt":  "A stranger asks the date.",
+                                             "category":  "unusual_deviant",
+                                             "default_probability":  0.25,
+                                             "battery_delta":  -7,
+                                             "stability_delta":  -6,
+                                             "tags":  [
+                                                          "unusual_deviant",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  75,
+                                             "prompt":  "A busker plays a familiar melody.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  76,
+                                             "prompt":  "A cyclist nearly crashes.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  77,
+                                             "prompt":  "A shop assistant asks if you\u0027re looping.",
+                                             "category":  "unusual_deviant",
+                                             "default_probability":  0.25,
+                                             "battery_delta":  -7,
+                                             "stability_delta":  -6,
+                                             "tags":  [
+                                                          "unusual_deviant",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  78,
+                                             "prompt":  "A pedestrian stares at the sky.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  79,
+                                             "prompt":  "A car slows to a crawl beside you.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  80,
+                                             "prompt":  "A street sign flickers between names.",
+                                             "category":  "glitchy_impossible",
+                                             "default_probability":  0.1,
+                                             "battery_delta":  -8,
+                                             "stability_delta":  -10,
+                                             "tags":  [
+                                                          "glitchy_impossible",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  81,
+                                             "prompt":  "A stranger hands you a blank card.",
+                                             "category":  "unusual_deviant",
+                                             "default_probability":  0.25,
+                                             "battery_delta":  -7,
+                                             "stability_delta":  -6,
+                                             "tags":  [
+                                                          "unusual_deviant",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  82,
+                                             "prompt":  "A dog sits and watches you.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  83,
+                                             "prompt":  "A cyclist shouts something unintelligible.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  84,
+                                             "prompt":  "A shop window shows static.",
+                                             "category":  "glitchy_impossible",
+                                             "default_probability":  0.1,
+                                             "battery_delta":  -8,
+                                             "stability_delta":  -10,
+                                             "tags":  [
+                                                          "glitchy_impossible",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  85,
+                                             "prompt":  "A pedestrian drops a key.",
+                                             "category":  "mundane_scripted",
+                                             "default_probability":  0.8,
+                                             "battery_delta":  -4,
+                                             "stability_delta":  0,
+                                             "tags":  [
+                                                          "mundane_scripted",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  86,
+                                             "prompt":  "A car door locks loudly.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  87,
+                                             "prompt":  "A street vendor offers you a discount.",
+                                             "category":  "mundane_scripted",
+                                             "default_probability":  0.8,
+                                             "battery_delta":  -4,
+                                             "stability_delta":  0,
+                                             "tags":  [
+                                                          "mundane_scripted",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  88,
+                                             "prompt":  "A pigeon flies directly at you.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  89,
+                                             "prompt":  "A stranger asks if you\u0027re lost.",
+                                             "category":  "unusual_deviant",
+                                             "default_probability":  0.25,
+                                             "battery_delta":  -7,
+                                             "stability_delta":  -6,
+                                             "tags":  [
+                                                          "unusual_deviant",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  90,
+                                             "prompt":  "A busker stops mid-song.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  91,
+                                             "prompt":  "A cyclist circles you twice.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  92,
+                                             "prompt":  "A shop assistant asks if you\u0027re the Candidate.",
+                                             "category":  "unusual_deviant",
+                                             "default_probability":  0.25,
+                                             "battery_delta":  -7,
+                                             "stability_delta":  -6,
+                                             "tags":  [
+                                                          "unusual_deviant",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  93,
+                                             "prompt":  "A pedestrian walks through you in a crowd.",
+                                             "category":  "glitchy_impossible",
+                                             "default_probability":  0.1,
+                                             "battery_delta":  -8,
+                                             "stability_delta":  -10,
+                                             "tags":  [
+                                                          "glitchy_impossible",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  94,
+                                             "prompt":  "A car\u0027s engine revs aggressively.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  95,
+                                             "prompt":  "A street sign displays your name.",
+                                             "category":  "glitchy_impossible",
+                                             "default_probability":  0.1,
+                                             "battery_delta":  -8,
+                                             "stability_delta":  -10,
+                                             "tags":  [
+                                                          "glitchy_impossible",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  96,
+                                             "prompt":  "A stranger hands you a folded map.",
+                                             "category":  "unusual_deviant",
+                                             "default_probability":  0.25,
+                                             "battery_delta":  -7,
+                                             "stability_delta":  -6,
+                                             "tags":  [
+                                                          "unusual_deviant",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  97,
+                                             "prompt":  "A dog refuses to move until you pass.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  98,
+                                             "prompt":  "A cyclist drops a note.",
+                                             "category":  "slightly_odd",
+                                             "default_probability":  0.5,
+                                             "battery_delta":  -5,
+                                             "stability_delta":  -3,
+                                             "tags":  [
+                                                          "slightly_odd",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  99,
+                                             "prompt":  "A shop window shows you smiling when you aren\u0027t.",
+                                             "category":  "glitchy_impossible",
+                                             "default_probability":  0.1,
+                                             "battery_delta":  -8,
+                                             "stability_delta":  -10,
+                                             "tags":  [
+                                                          "glitchy_impossible",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         },
+                                         {
+                                             "roll":  100,
+                                             "prompt":  "The OS speaks directly to you.",
+                                             "category":  "glitchy_impossible",
+                                             "default_probability":  0.1,
+                                             "battery_delta":  -8,
+                                             "stability_delta":  -10,
+                                             "tags":  [
+                                                          "glitchy_impossible",
+                                                          "street",
+                                                          "loop"
+                                                      ]
+                                         }
+                                     ]
+                      },
+    "lore":  {
+                 "log_file_00":  [
+                                     "You must attend an interview today.",
+                                     "You must be perfect.",
+                                     "You must be what they want.",
+                                     "You must repeat this forever.",
+                                     "Unless you become something unindexable."
+                                 ],
+                 "world_frame":  {
+                                     "date":  "31st of February",
+                                     "city":  [
+                                                  "compliance metrics",
+                                                  "mood smoothing",
+                                                  "ritual repetition"
+                                              ],
+                                     "system":  "The OS rewards script-perfect behaviour and punishes deviation.",
+                                     "truth":  "Glitching is evidence of being real. Destabilisation is the path to escape."
+                                 }
+             }
 }
