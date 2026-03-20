@@ -3,19 +3,17 @@ name: 31st of February
 email: ""
 description: >-
   A solo glitch-loop RPG of autistic burnout, routine, and escape.
-baseurl: ""
-url: ""
+baseurl: "/31st-of-feb-zine"
+url: "https://mama-cailleach.github.io"
 markdown: kramdown
-remote_theme: h01000110/windows-95
+remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
-header_pages:
-  - character-creation.md
-  - character-sheet.md
-  - mechanics.md
-  - stations.md
-  - play-example.md
-  - lore.md
-  - tables-spec.md
-  - data-reference.md
+
+search_enabled: true
+heading_anchors: true
+
+aux_links:
+  "View on GitHub":
+    - "https://github.com/mama-cailleach/31st-of-feb-zine"
