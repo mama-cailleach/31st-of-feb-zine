@@ -1,0 +1,19 @@
+title: 31st of February
+email: ""
+description: >-
+  A solo glitch-loop RPG of autistic burnout, routine, and escape.
+baseurl: ""
+url: ""
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+header_pages:
+  - character-creation.md
+  - character-sheet.md
+  - mechanics.md
+  - stations.md
+  - play-example.md
+  - lore.md
+  - tables-spec.md
+  - data-reference.md
