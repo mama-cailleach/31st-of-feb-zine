@@ -51,7 +51,7 @@ permalink: /character-sheet/
         <td>Battery</td>
         <td>100</td>
         <td>____</td>
-        <td>-5 per Objective, 0 triggers reset</td>
+        <td>-5 per Objective; recharge may raise next-loop Battery</td>
       </tr>
       <tr>
         <td>Stability</td>
@@ -98,7 +98,7 @@ permalink: /character-sheet/
     <li>Exhaustion cap applies only to Return B (Commute Back): max dice = ceil(Battery / 20).</li>
     <li>13+ is Success Trap: Stability +5 per player die rolled.</li>
     <li>Below 13 is Glitch: Stability -5 per player die rolled.</li>
-    <li>Result (R): d100 + d100, below Stability is safe.</li>
+    <li>Result (R): d100 + d100, below Stability is Glitch.</li>
     <li>Recharge (U): roll d100; if above current Battery, next-loop Battery becomes that roll.</li>
   </ul>
 </div>

@@ -18,7 +18,7 @@ When you succeed, roll 1d12 on the matching pool table to see how The OS renders
 | --- | --- | --- | --- |
 | 1 | Perfect micro-expression. | Frame-perfect movement. | Elegant code-path found. |
 | 2 | Charismatic Auto-Fill. | Weightless coordination. | Data-stream clarity. |
-| 3 | Uncannily pleasant tone. | Heightened reaction time. | Occams Razor solution. |
+| 3 | Uncannily pleasant tone. | Heightened reaction time. | Occam's Razor solution. |
 | 4 | The Ideal Citizen aura. | Sensory overclock. | System-wide efficiency. |
 | 5 | Narrative-grade charm. | Spatial awareness +100%. | Pattern recognition lock. |
 | 6 | Flawless social script. | Muscle-memory override. | Probability manipulation. |
@@ -44,7 +44,7 @@ Triggered when Total equals DC. Lose 10% Stability, then roll 1d20.
 | 7 | SENSORY SWAP: You smell the color blue or see the sound of the bus. |
 | 8 | TIME JUMP: You teleport 10 feet forward with no memory of the steps. |
 | 9 | ASSET FLIP: A common object is replaced by a strange item. |
-| 10 | THE VOID-EYE: For a split second, everyones eyes turn into black pits. |
+| 10 | THE VOID-EYE: For a split second, everyone's eyes turn into black pits. |
 | 11 | SKY-BOX TEAR: Looking up reveals the sky is a flat, flickering image file. |
 | 12 | DUPLICATION: There are two of the same person standing next to each other. |
 | 13 | GRAVITY SPIKE: Everything suddenly feels five times heavier for one minute. |
@@ -53,7 +53,7 @@ Triggered when Total equals DC. Lose 10% Stability, then roll 1d20.
 | 16 | MIND-LOOP: You repeat the last sentence you said three times involuntarily. |
 | 17 | STUTTER-STEP: You are stuck in a walking animation but are not moving. |
 | 18 | THE MONITOR: You see a giant, pixelated eye watching from a window. |
-| 19 | DATA BLEED: Fragments of another candidates memory overlay your own for a moment. |
+| 19 | DATA BLEED: Fragments of another candidate's memory overlay your own for a moment. |
 | 20 | KERNEL PANIC: The scene freezes, alarms blare, and the loop hard-resets with no transition. |
 
 ## Awakening
@@ -79,8 +79,8 @@ Triggered when Total equals DC. Lose 10% Stability, then roll 1d20.
 
 Roll d100 (Player) + d100 (The OS).
 
-- Total below current Stability: avoid Glitch.
-- Total equal to or above current Stability: Glitch.
+- Total below current Stability: Glitch.
+- Total equal to or above current Stability: avoid Glitch.
 
 This inversion is intentional.
 
@@ -94,12 +94,12 @@ This inversion is intentional.
 
 For this check only apply Exhaustion and combine stats within the threshold:
 
-- Dice Pool(Exhaustion) rounded up = `6d6(Battery / 20)`
+- Exhaustion dice cap (rounded up): `ceil(Battery / 20)`
 - 81%-100% = 5d6
 - 61%-80% = 4d6
 - 41%-60% = 3d6
 - 21%-40% = 2d6
-- 1%-20% = 1d6 
+- 1%-20% = 1d6
 
 ### Recharge (U)
 
