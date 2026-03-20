@@ -14,9 +14,14 @@ Assign the values 1, 2, and 3 to your three core pools. This assignment is done 
 
 ## Vital Signs
 
-- Battery: starts at 100%. Each Objective costs 5%. If Battery reaches 0%, the loop resets.
+- Battery: starts at 100%. Each Objective costs 5%. At loop end, Recharge may raise next-loop Battery.
 - Stability: starts at 100%. Your goal is to reach 0%.
 - SIP (Special Interest Points): starts at 0. Gain 1 SIP each time you complete a full loop.
+
+## End of Loop
+
+- Recharge: roll d100. If the roll is higher than your current Battery, next-loop Battery becomes that roll.
+- Receipt Printing: record final Battery, final Stability, total Successes, and total Glitches.
 
 ## SIP Rules
 

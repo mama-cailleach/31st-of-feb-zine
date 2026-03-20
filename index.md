@@ -8,6 +8,8 @@ A solo glitch-loop RPG.
 
 The date never changes. The interview never ends. Your goal is to lower Stability to 0% and break out.
 
+At the end of each loop, resolve Recharge (d100) and then print a loop receipt with final Battery, final Stability, total Successes, and total Glitches.
+
 ## Start Here
 
 - [Character Creation](character-creation/)
