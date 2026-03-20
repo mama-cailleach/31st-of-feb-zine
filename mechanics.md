@@ -4,75 +4,59 @@ title: Core Mechanics
 permalink: /mechanics/
 ---
 
-## Core Loop
+## Objective Flow
 
-Play one full loop across four phases:
+Each Objective follows this order:
 
-1. Awakening
-2. Journey
-3. Interview
-4. Return
+1. Choose the pool for the Objective (from the station structure).
+2. Roll your pool (d6 count equals your chosen pool value).
+3. Roll The OS die based on current Stability.
+4. Sum the result and compare to DC 13.
+5. Apply Stability change and Battery drain.
 
-Roll one d100 event per phase.
+## Pass/Glitch Rule
 
-Each event has a default probability value.
-Multiply all rolled event probabilities to get Daily Success Probability.
+- Total 13 or more: Success Trap. Stability increases by 5% per player die rolled.
+- Total below 13: Glitch. Stability decreases by 5% per player die rolled.
 
-## Probability Rule
+This reversed emotional logic is intentional: performing perfectly reinforces the simulation.
 
-- Daily Success Probability = p1 x p2 x p3 x p4
-- Goal state is 0% Success Probability.
-- 0% is mathematically unreachable, so the loop tends to continue.
+## Battery and Objective Cost
 
-## Threshold Trigger
+- Every Objective costs 5% Battery.
+- Clamp Battery and Stability to 0-100 after each objective.
 
-If Daily Success Probability becomes 0.1% or lower during the loop:
+## Day Structure
 
-- Stability -10
-- SIP +1
+- Awakening: 3 Objectives (D, O, W) -> `AW_A`, `AW_B`, `AW_C`
+- Journey: 3 Objectives (G, L, Y) -> `CM_D`, `CM_E`, `CM_F`
+- Interview: 4 Objectives (S, T, A, R) -> `IN_S`, `IN_T`, `IN_A`, `IN_R`
+- Return: Commute Back check, Recharge check, then Receipt Printing summary (B, U, M) -> `RT_G`, `RT_H`, `RT_I`
 
-This marks an anomaly event in the simulation.
+## Station IV: Exhaustion and Recharge
 
-## Battery Rule
+- Exhaustion only applies to Commute Back (`RT_G`, letter B).
+- For Commute Back, maximum dice rolled is `ceil(Battery / 20)`.
+- Roll your normal pool, but cap dice to that Exhaustion limit.
+- At loop end, Recharge (`RT_H`) is a d100 roll.
+- If Recharge is higher than your current Battery, next loop Battery becomes that roll.
 
-- Battery starts at 100.
-- Each rolled event applies its Battery delta.
-- You may also spend Battery through Compliance (see below).
-- If Battery reaches 0, the loop phase ends immediately.
+## Receipt Printing (M)
 
-## Stability Rule
+- Receipt Printing (`RT_I`) summarizes the completed loop.
+- Include final Battery, final Stability, total Successes, and total Glitches.
 
-- Stability starts at 100.
-- Events apply Stability deltas based on event category.
+After Receipt Printing, the loop resets unless Stability has reached 0%.
 
-### Stability Maintenance: Compliance Restore
+## The Result Check (R)
 
-Once per phase, you may choose Compliance:
+For R, use the combined check:
 
-- Battery -5
-- Stability +5 (to a maximum of 100)
+- Roll d100 (Player) + d100 (The OS)
+- If the total is below current Stability, Glitch
+- If the total is equal or above Stability, avoid a Glitch
 
-This represents performing the expected script to maintain internal order.
 
-## SIP Rule
+## Win Condition
 
-- SIP starts at 0.
-- Gain SIP when you make self-directed choices that oppose expected behavior.
-- Gain additional SIP from threshold anomaly triggers.
-
-## Loop End and Repeat
-
-The loop ends when:
-
-- Return phase is resolved, or
-- Battery hits 0 during any phase.
-
-At loop end, record a receipt:
-
-- Final Battery
-- Final Stability
-- Final SIP
-- Final Daily Success Probability
-
-Then begin the next loop on 31st of February.
-
+You break the loop only when Stability reaches 0%.
