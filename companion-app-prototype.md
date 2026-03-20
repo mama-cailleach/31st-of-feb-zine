@@ -2,6 +2,7 @@
 layout: page
 title: Companion App Prototype
 permalink: /companion-app-prototype/
+nav_exclude: true
 ---
 
 <div class="sheet">

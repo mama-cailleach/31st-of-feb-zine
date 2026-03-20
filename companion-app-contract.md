@@ -2,11 +2,12 @@
 layout: page
 title: Companion App Contract
 permalink: /companion-app-contract/
+nav_exclude: true
 ---
 
 This page defines practical payload shapes for a future companion app using `_data/tables.json`.
 
-Try the interactive version: [Companion App Prototype](/companion-app-prototype/).
+Try the interactive version: [Companion App Prototype](companion-app-prototype/).
 
 ## Core Source
 

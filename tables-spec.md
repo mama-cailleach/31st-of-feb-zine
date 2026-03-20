@@ -2,6 +2,7 @@
 layout: page
 title: Game Data Notes
 permalink: /tables-spec/
+nav_exclude: true
 ---
 
 This page documents the active JSON schema used by both the zine and the planned companion app.
@@ -47,4 +48,4 @@ This schema supports:
 - threshold trigger detection
 - loop receipt generation
 
-Implementation-ready payload examples are in [Companion App Contract](/companion-app-contract/).
+Implementation-ready payload examples are in [Companion App Contract](companion-app-contract/).

@@ -11,6 +11,9 @@ plugins:
   - jekyll-remote-theme
   - jekyll-feed
 
+exclude:
+  - "OLD STUFF"
+
 search_enabled: true
 heading_anchors: true
 

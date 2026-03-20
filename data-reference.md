@@ -2,6 +2,7 @@
 layout: page
 title: Data Reference
 permalink: /data-reference/
+nav_exclude: true
 ---
 
 This page is generated from `_data/tables.json`.
