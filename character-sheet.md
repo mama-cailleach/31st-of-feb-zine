@@ -63,7 +63,7 @@ permalink: /character-sheet/
         <td>SIP</td>
         <td>0</td>
         <td>____</td>
-        <td>+1 per completed loop, spend to negate Goddess roll</td>
+        <td>+1 per completed loop, spend to negate an OS roll</td>
       </tr>
     </tbody>
   </table>
@@ -90,16 +90,16 @@ permalink: /character-sheet/
   </table>
 
   <h2>Objective Sequence</h2>
-  <p>Awakening: A, B, C | Commute: D, E, F | Interview: S, T, A, R | Return: G (Commute Back), H (Recharge), I (Receipt Printing)</p>
+  <p>Awakening: D, O, W | Journey: G, L, Y | Interview: S, T, A, R | Return: B (Commute Back), U (Recharge), M (Receipt Printing)</p>
 
   <h2>Resolution Reminder</h2>
   <ul>
-    <li>Roll pool d6s + Goddess die.</li>
-    <li>Exhaustion cap applies only to Return G (Commute Back): max dice = ceil(Battery / 20).</li>
+    <li>Roll pool d6s + The OS die.</li>
+    <li>Exhaustion cap applies only to Return B (Commute Back): max dice = ceil(Battery / 20).</li>
     <li>13+ is Success Trap: Stability +5 per player die rolled.</li>
     <li>Below 13 is Glitch: Stability -5 per player die rolled.</li>
     <li>Result (R): d100 + d100, below Stability is safe.</li>
-    <li>Recharge (H): roll d100; if above current Battery, next-loop Battery becomes that roll.</li>
+    <li>Recharge (U): roll d100; if above current Battery, next-loop Battery becomes that roll.</li>
   </ul>
 </div>
 

@@ -18,6 +18,6 @@ Unless you decide to be something unindexable.
 
 The date is fixed: 31st of February.
 
-The city runs on compliance metrics, mood smoothing, and ritual repetition. The Goddess is the system voice that rewards script-perfect behavior and punishes deviation. To escape, you must destabilize what the simulation expects from you.
+The city runs on compliance metrics, mood smoothing, and ritual repetition. The OS is the system voice that rewards script-perfect behavior and punishes deviation. To escape, you must destabilize what the simulation expects from you.
 
 Glitching is not failure. In this world, glitching is evidence you are still real.

@@ -25,7 +25,7 @@ Assign the values 1, 2, and 3 to your three core pools. This assignment is done 
 
 ## SIP Rules
 
-- Spend 1 SIP to negate a Goddess roll.
+- Spend 1 SIP to negate an OS roll.
 - SIP does not auto-refill.
 - SIP carries across loops.
 

@@ -28,14 +28,14 @@ If this page changes, the underlying game data changed.
 | --- | --- |
 | Start SIP | {{ site.data.tables.sip_rules.start }} |
 | Gain per completed loop | {{ site.data.tables.sip_rules.gain_per_completed_loop }} |
-| Negates Goddess roll | {{ site.data.tables.sip_rules.negates_goddess_roll }} |
+| Negates The OS roll | {{ site.data.tables.sip_rules.negates_os_roll }} |
 | Persists across loops | {{ site.data.tables.sip_rules.persists_across_loops }} |
 
-## Goddess Table
+## The OS Table
 
 | Stability Range | Die | Effect |
 | --- | --- | --- |
-{% for row in site.data.tables.goddess_table %}
+{% for row in site.data.tables.os_table %}
 | {{ row.min_stability }}-{{ row.max_stability }} | {{ row.die }} | {{ row.effect }} |
 {% endfor %}
 
@@ -84,3 +84,30 @@ If this page changes, the underlying game data changed.
 
 - {{ recharge_obj.symbol }} {{ recharge_obj.name }}: {{ recharge_obj.rules_text }}
 - {{ receipt_obj.symbol }} {{ receipt_obj.name }}: {{ receipt_obj.rules_text }}
+
+## Architecture of Success
+
+{% assign success_tables = site.data.tables.random_flavor_tables.architecture_of_success %}
+
+- Die: {{ success_tables.die }}
+- Rule: {{ success_tables.description }}
+
+| Roll | MSK (The Mask) | SNS (The Senses) | LOG (The Logic) |
+| --- | --- | --- | --- |
+{% for idx in (0..11) %}
+| {{ idx | plus: 1 }} | {{ success_tables.tables.msk[idx] }} | {{ success_tables.tables.sns[idx] }} | {{ success_tables.tables.log[idx] }} |
+{% endfor %}
+
+## The Big Book of Glitches
+
+{% assign glitches = site.data.tables.random_flavor_tables.big_book_of_glitches %}
+
+- Die: {{ glitches.die }}
+- Trigger: {{ glitches.trigger }}
+- Stability penalty: -{{ glitches.stability_penalty }}
+
+| Roll | Glitch |
+| --- | --- |
+{% for entry in glitches.entries %}
+| {{ forloop.index }} | {{ entry }} |
+{% endfor %}

@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "game_id": "31st-of-february",
   "core_rules": {
     "dc": 13,
@@ -35,10 +35,10 @@
   "sip_rules": {
     "start": 0,
     "gain_per_completed_loop": 1,
-    "negates_goddess_roll": true,
+    "negates_os_roll": true,
     "persists_across_loops": true
   },
-  "goddess_table": [
+  "os_table": [
     {
       "min_stability": 90,
       "max_stability": 100,
@@ -91,7 +91,7 @@
     },
     {
       "id": "commute",
-      "label": "Commute",
+      "label": "Journey",
       "order": 2,
       "objectives": ["CM_D", "CM_E", "CM_F"]
     },
@@ -110,7 +110,7 @@
   ],
   "objective_catalog": {
     "AW_A": {
-      "symbol": "A",
+      "symbol": "D",
       "name": "Bed",
       "season_id": "awakening",
       "default_pool": "sns",
@@ -126,7 +126,7 @@
       ]
     },
     "AW_B": {
-      "symbol": "B",
+      "symbol": "O",
       "name": "Mirror",
       "season_id": "awakening",
       "default_pool": "msk",
@@ -142,7 +142,7 @@
       ]
     },
     "AW_C": {
-      "symbol": "C",
+      "symbol": "W",
       "name": "Fuel",
       "season_id": "awakening",
       "default_pool": "sns",
@@ -158,7 +158,7 @@
       ]
     },
     "CM_D": {
-      "symbol": "D",
+      "symbol": "G",
       "name": "Connection",
       "season_id": "commute",
       "default_pool": "log",
@@ -174,7 +174,7 @@
       ]
     },
     "CM_E": {
-      "symbol": "E",
+      "symbol": "L",
       "name": "Interaction",
       "season_id": "commute",
       "default_pool": "msk",
@@ -190,7 +190,7 @@
       ]
     },
     "CM_F": {
-      "symbol": "F",
+      "symbol": "Y",
       "name": "Environment",
       "season_id": "commute",
       "default_pool": "sns",
@@ -259,10 +259,10 @@
       "season_id": "interview",
       "special_check": "d100_plus_d100_below_stability",
       "result_check_mode": "below_stability_is_safe",
-      "rules_text": "Roll d100 (Player) + d100 (Goddess). Below current Stability is safe; equal or above glitches."
+      "rules_text": "Roll d100 (Player) + d100 (The OS). Below current Stability is safe; equal or above glitches."
     },
     "RT_G": {
-      "symbol": "G",
+      "symbol": "B",
       "name": "Commute Back",
       "season_id": "return",
       "default_pool": "sns",
@@ -279,7 +279,7 @@
       ]
     },
     "RT_H": {
-      "symbol": "H",
+      "symbol": "U",
       "name": "Recharge",
       "season_id": "return",
       "special_check": "d100_recharge",
@@ -287,11 +287,88 @@
       "rules_text": "Roll d100 at loop end. If the roll is higher than current Battery, next-loop Battery becomes that roll."
     },
     "RT_I": {
-      "symbol": "I",
+      "symbol": "M",
       "name": "Receipt Printing",
       "season_id": "return",
       "special_check": "loop_receipt_summary",
       "rules_text": "Record loop summary with final Battery, final Stability, total Successes, and total Glitches."
+    }
+  },
+  "random_flavor_tables": {
+    "architecture_of_success": {
+      "die": "d12",
+      "description": "When you succeed, roll on the matching pool table to see how The OS renders your victory.",
+      "tables": {
+        "msk": [
+          "Perfect micro-expression.",
+          "Charismatic Auto-Fill.",
+          "Uncannily pleasant tone.",
+          "The Ideal Citizen aura.",
+          "Narrative-grade charm.",
+          "Flawless social script.",
+          "Mimicry: 100% Match.",
+          "Emotional firewall active.",
+          "Subject is Invisible.",
+          "High-fidelity skin render.",
+          "Persuasion.exe success.",
+          "Script-perfect smile, zero seams visible."
+        ],
+        "sns": [
+          "Frame-perfect movement.",
+          "Weightless coordination.",
+          "Heightened reaction time.",
+          "Sensory overclock.",
+          "Spatial awareness +100%.",
+          "Muscle-memory override.",
+          "Impact dampening.",
+          "Kinetic energy recovery.",
+          "Zero-latency motion.",
+          "Precision equilibrium.",
+          "Surface-tension grip.",
+          "Noise-cancelled calm, every signal in phase."
+        ],
+        "log": [
+          "Elegant code-path found.",
+          "Data-stream clarity.",
+          "Occams Razor solution.",
+          "System-wide efficiency.",
+          "Pattern recognition lock.",
+          "Probability manipulation.",
+          "Logical Short-Circuit.",
+          "Optimized resource use.",
+          "Root-access intuition.",
+          "Algorithm bypass.",
+          "Multi-threaded thought.",
+          "Self-healing plan compiles on first run."
+        ]
+      }
+    },
+    "big_book_of_glitches": {
+      "die": "d20",
+      "trigger": "total_equals_dc",
+      "stability_penalty": 10,
+      "entries": [
+        "TEXTURE LOSS: An object you touch turns into a bright pink missing grid.",
+        "VOICE DELAY: Your words appear as subtitles in the air before you speak them.",
+        "LOD ERROR: People farther than 5 feet away become low-poly, faceless shapes.",
+        "CLIP-THRU: You momentarily sink ankle-deep into the solid floor.",
+        "GHOST INPUT: Your hand moves to do something your mind did not command.",
+        "SOUND LEAK: You hear the background music of the simulation as loud white noise.",
+        "SENSORY SWAP: You smell the color blue or see the sound of the bus.",
+        "TIME JUMP: You teleport 10 feet forward with no memory of the steps.",
+        "ASSET FLIP: A common object is replaced by a strange item.",
+        "THE VOID-EYE: For a split second, everyones eyes turn into black pits.",
+        "SKY-BOX TEAR: Looking up reveals the sky is a flat, flickering image file.",
+        "DUPLICATION: There are two of the same person standing next to each other.",
+        "GRAVITY SPIKE: Everything suddenly feels five times heavier for one minute.",
+        "STATIC BREATH: When you exhale, gray digital dust falls from your mouth.",
+        "UI INTERFERENCE: A Low Battery or Error 404 warning floats in your vision.",
+        "MIND-LOOP: You repeat the last sentence you said three times involuntarily.",
+        "STUTTER-STEP: You are stuck in a walking animation but are not moving.",
+        "THE MONITOR: You see a giant, pixelated eye watching from a window.",
+        "DATA BLEED: Fragments of another candidates memory overlay your own for a moment.",
+        "KERNEL PANIC: The scene freezes, alarms blare, and the loop hard-resets with no transition."
+      ]
     }
   }
 }
