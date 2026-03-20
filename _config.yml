@@ -1,12 +1,14 @@
 title: 31st of February
+name: 31st of February
 email: ""
 description: >-
   A solo glitch-loop RPG of autistic burnout, routine, and escape.
 baseurl: ""
 url: ""
 markdown: kramdown
-theme: minima
+remote_theme: h01000110/windows-95
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
 header_pages:
   - character-creation.md
