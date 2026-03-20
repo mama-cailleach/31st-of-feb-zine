@@ -8,7 +8,7 @@ permalink: /mechanics/
 
 Each Objective follows this order:
 
-1. Choose the pool for the Objective (from the station structure).
+1. Choose the stat for the Objective (from the station structure).
 2. Roll your pool (d6 count equals your chosen pool value).
 3. Roll The OS die based on current Stability.
 4. Sum the result and compare to DC 13.
@@ -37,7 +37,7 @@ This reversed emotional logic is intentional: performing perfectly reinforces th
 
 - Exhaustion only applies to Commute Back (`RT_G`, letter B).
 - For Commute Back, maximum dice rolled is `ceil(Battery / 20)`.
-- Roll your normal pool, but cap dice to that Exhaustion limit.
+- Roll your combined pool, but cap dice to that Exhaustion limit.
 - At loop end, Recharge (`RT_H`) is a d100 roll.
 - If Recharge is higher than your current Battery, next loop Battery becomes that roll.
 

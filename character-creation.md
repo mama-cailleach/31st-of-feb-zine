@@ -6,7 +6,8 @@ permalink: /character-creation/
 
 ## Candidate Sheet
 
-Assign the values 1, 2, and 3 to your three core pools. This assignment is done once at character creation and stays fixed across loops.
+Assign the values 1, 2, and 3 to your three core stats. Each number represents your pool of d6. 
+This assignment is done once at character creation and stays fixed across loops.
 
 - MSK (Masking): performing the expected self, scripts, social facade
 - SNS (Sensory): processing noise, movement, overstimulation, focus shifts
@@ -23,7 +24,7 @@ Assign the values 1, 2, and 3 to your three core pools. This assignment is done 
 - Recharge: roll d100. If the roll is higher than your current Battery, next-loop Battery becomes that roll.
 - Receipt Printing: record final Battery, final Stability, total Successes, and total Glitches.
 
-## SIP Rules
+## Special Interest Point (SIP) Rules
 
 - Spend 1 SIP to negate an OS roll.
 - SIP does not auto-refill.

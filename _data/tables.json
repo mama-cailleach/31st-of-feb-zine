@@ -6,7 +6,9 @@
     "objective_battery_cost": 5,
     "stability_step_per_die": 5,
     "exhaustion_divisor": 20,
-    "exhaustion_applies_to": ["RT_G"],
+    "exhaustion_applies_to": [
+      "RT_G"
+    ],
     "recharge_roll": "d100",
     "recharge_rule": "If recharge roll is higher than current Battery, set next-loop Battery to the roll.",
     "loop_reset_mode": "auto",
@@ -54,7 +56,11 @@
       "label": "Logic",
       "description": "Systems, routines, literal truths"
     },
-    "creation_values": [1, 2, 3],
+    "creation_values": [
+      1,
+      2,
+      3
+    ],
     "assignment_mode": "assign_once"
   },
   "sip_rules": {
@@ -112,25 +118,42 @@
       "id": "awakening",
       "label": "Awakening",
       "order": 1,
-      "objectives": ["AW_A", "AW_B", "AW_C"]
+      "objectives": [
+        "AW_A",
+        "AW_B",
+        "AW_C"
+      ]
     },
     {
       "id": "commute",
       "label": "Journey",
       "order": 2,
-      "objectives": ["CM_D", "CM_E", "CM_F"]
+      "objectives": [
+        "CM_D",
+        "CM_E",
+        "CM_F"
+      ]
     },
     {
       "id": "interview",
       "label": "Interview",
       "order": 3,
-      "objectives": ["IN_S", "IN_T", "IN_A", "IN_R"]
+      "objectives": [
+        "IN_S",
+        "IN_T",
+        "IN_A",
+        "IN_R"
+      ]
     },
     {
       "id": "return",
       "label": "Return",
       "order": 4,
-      "objectives": ["RT_G", "RT_H", "RT_I"]
+      "objectives": [
+        "RT_G",
+        "RT_H",
+        "RT_I"
+      ]
     }
   ],
   "objective_catalog": {
@@ -139,7 +162,11 @@
       "name": "Bed",
       "season_id": "awakening",
       "default_pool": "sns",
-      "pool_options": ["msk", "sns", "log"],
+      "pool_options": [
+        "msk",
+        "sns",
+        "log"
+      ],
       "prompt_die": "d6",
       "prompts": [
         "You wake from a loop memory and lose your words.",
@@ -155,7 +182,11 @@
       "name": "Mirror",
       "season_id": "awakening",
       "default_pool": "msk",
-      "pool_options": ["msk", "sns", "log"],
+      "pool_options": [
+        "msk",
+        "sns",
+        "log"
+      ],
       "prompt_die": "d6",
       "prompts": [
         "You do the expected face and hate how easy it is.",
@@ -171,7 +202,11 @@
       "name": "Fuel",
       "season_id": "awakening",
       "default_pool": "sns",
-      "pool_options": ["msk", "sns", "log"],
+      "pool_options": [
+        "msk",
+        "sns",
+        "log"
+      ],
       "prompt_die": "d6",
       "prompts": [
         "You forget to eat and run on friction.",
@@ -187,7 +222,11 @@
       "name": "Connection",
       "season_id": "commute",
       "default_pool": "log",
-      "pool_options": ["msk", "sns", "log"],
+      "pool_options": [
+        "msk",
+        "sns",
+        "log"
+      ],
       "prompt_die": "d6",
       "prompts": [
         "A delay collapses your timing and rewrites your route.",
@@ -203,7 +242,11 @@
       "name": "Interaction",
       "season_id": "commute",
       "default_pool": "msk",
-      "pool_options": ["msk", "sns", "log"],
+      "pool_options": [
+        "msk",
+        "sns",
+        "log"
+      ],
       "prompt_die": "d6",
       "prompts": [
         "A stranger requests small talk and your script lags.",
@@ -219,7 +262,11 @@
       "name": "Environment",
       "season_id": "commute",
       "default_pool": "sns",
-      "pool_options": ["msk", "sns", "log"],
+      "pool_options": [
+        "msk",
+        "sns",
+        "log"
+      ],
       "prompt_die": "d6",
       "prompts": [
         "Lighting hum drills into your concentration.",
@@ -235,7 +282,11 @@
       "name": "Situation",
       "season_id": "interview",
       "default_pool": "log",
-      "pool_options": ["msk", "sns", "log"],
+      "pool_options": [
+        "msk",
+        "sns",
+        "log"
+      ],
       "prompt_die": "d6",
       "prompts": [
         "The interviewer asks for an origin story you have rehearsed too many times.",
@@ -251,7 +302,11 @@
       "name": "Task",
       "season_id": "interview",
       "default_pool": "log",
-      "pool_options": ["msk", "sns", "log"],
+      "pool_options": [
+        "msk",
+        "sns",
+        "log"
+      ],
       "prompt_die": "d6",
       "prompts": [
         "Translate your real process into market-safe language.",
@@ -267,7 +322,11 @@
       "name": "Action",
       "season_id": "interview",
       "default_pool": "msk",
-      "pool_options": ["msk", "sns", "log"],
+      "pool_options": [
+        "msk",
+        "sns",
+        "log"
+      ],
       "prompt_die": "d6",
       "prompts": [
         "You perform the expected answer exactly and lose yourself in it.",
@@ -291,7 +350,11 @@
       "name": "Commute Back",
       "season_id": "return",
       "default_pool": "sns",
-      "pool_options": ["msk", "sns", "log"],
+      "pool_options": [
+        "msk",
+        "sns",
+        "log"
+      ],
       "exhaustion_applies": true,
       "prompt_die": "d6",
       "prompts": [
