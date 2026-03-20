@@ -90,7 +90,7 @@ permalink: /character-sheet/
   </table>
 
   <h2>Objective Sequence</h2>
-  <p>Awakening: D, O, W | Journey: G, L, Y | Interview: S, T, A, R | Return: B (Commute Back), U (Recharge), M (Receipt Printing)</p>
+  <p>Awakening: D, O, W | Journey: G, L, Y | Interview: S, T, A, R | Return: B, U, M </p>
 
   <h2>Resolution Reminder</h2>
   <ul>
@@ -103,6 +103,3 @@ permalink: /character-sheet/
   </ul>
 </div>
 
-<p class="no-print">
-  Print tip: use browser print (Ctrl+P), scale 90-100%, and disable header/footer for cleaner output.
-</p>

@@ -1,4 +1,4 @@
-# Architecture of Success (3 x d12)
+# Architecture of Success 
 
 When you succeed, roll 1d12 on the corresponding attribute table to see how The OS renders your victory.
 
@@ -17,7 +17,7 @@ When you succeed, roll 1d12 on the corresponding attribute table to see how The 
 | 11 | Persuasion.exe success. | Surface-tension grip. | Multi-threaded thought. |
 | 12 | Script-perfect smile, zero seams visible. | Noise-cancelled calm, every signal in phase. | Self-healing plan compiles on first run. |
 
-## The Big Book of Glitches (d20)
+## The Big Book of Glitches 
 
 Triggered when Total == DC. Lose 10% Stability and roll below.
 

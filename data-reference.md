@@ -35,38 +35,11 @@ If this page changes, the underlying game data changed.
 
 | Stability Range | Die | Effect |
 | --- | --- | --- |
+
 {% for row in site.data.tables.os_table %}
 | {{ row.min_stability }}-{{ row.max_stability }} | {{ row.die }} | {{ row.effect }} |
 {% endfor %}
 
-## Seasons and Objectives
-
-{% assign ordered_seasons = site.data.tables.seasons | sort: "order" %}
-{% for season in ordered_seasons %}
-### {{ season.label }}
-
-| Objective Key | Symbol | Name | Default Pool | Pool Options | Check Type |
-| --- | --- | --- | --- | --- | --- |
-{% for objective_id in season.objectives %}
-{% assign objective = site.data.tables.objective_catalog[objective_id] %}
-| {{ objective_id }} | {{ objective.symbol }} | {{ objective.name }} | {{ objective.default_pool | default: "n/a" }} | {{ objective.pool_options | join: ", " | default: "n/a" }} | {{ objective.special_check | default: "standard" }} |
-{% endfor %}
-
-{% for objective_id in season.objectives %}
-{% assign objective = site.data.tables.objective_catalog[objective_id] %}
-{% if objective.prompts %}
-#### {{ objective.symbol }} - {{ objective.name }} Prompts ({{ objective.prompt_die }})
-
-| Roll | Prompt |
-| --- | --- |
-{% for prompt in objective.prompts %}
-| {{ forloop.index }} | {{ prompt }} |
-{% endfor %}
-
-{% endif %}
-{% endfor %}
-
-{% endfor %}
 
 ## Result Check (Interview)
 

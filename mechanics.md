@@ -50,13 +50,12 @@ After Receipt Printing, the loop resets unless Stability has reached 0%.
 
 ## The Result Check (R)
 
-For R, use the contested check:
+For R, use the combined check:
 
 - Roll d100 (Player) + d100 (The OS)
-- If the total is below current Stability, avoid a Glitch
-- If the total is equal or above Stability, Glitch
+- If the total is below current Stability, Glitch
+- If the total is equal or above Stability, avoid a Glitch
 
-This is deliberately backwards by design.
 
 ## Win Condition
 
