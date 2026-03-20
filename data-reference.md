@@ -16,6 +16,9 @@ If this page changes, the underlying game data changed.
 | Battery cost per objective | {{ site.data.tables.core_rules.objective_battery_cost }} |
 | Stability step per player die | {{ site.data.tables.core_rules.stability_step_per_die }} |
 | Exhaustion divisor | {{ site.data.tables.core_rules.exhaustion_divisor }} |
+| Exhaustion applies to | {{ site.data.tables.core_rules.exhaustion_applies_to | join: ", " }} |
+| Recharge roll | {{ site.data.tables.core_rules.recharge_roll }} |
+| Recharge rule | {{ site.data.tables.core_rules.recharge_rule }} |
 | Loop reset mode | {{ site.data.tables.core_rules.loop_reset_mode }} |
 | Loop break condition | {{ site.data.tables.core_rules.loop_break_condition }} |
 
@@ -73,3 +76,11 @@ If this page changes, the underlying game data changed.
 - Check: {{ result_obj.special_check }}
 - Mode: {{ result_obj.result_check_mode }}
 - Rule: {{ result_obj.rules_text }}
+
+## Return Special Checks
+
+{% assign recharge_obj = site.data.tables.objective_catalog.RT_H %}
+{% assign receipt_obj = site.data.tables.objective_catalog.RT_I %}
+
+- {{ recharge_obj.symbol }} {{ recharge_obj.name }}: {{ recharge_obj.rules_text }}
+- {{ receipt_obj.symbol }} {{ receipt_obj.name }}: {{ receipt_obj.rules_text }}

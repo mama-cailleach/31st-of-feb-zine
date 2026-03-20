@@ -135,11 +135,16 @@ This inversion is intentional.
 
 ## Return
 
-- G: Commute Back
-- H: Anchor
-- I: Bed
+- G: Commute Back (dice pool check with Exhaustion cap)
+- H: Recharge (d100)
+- I: Receipt Printing (loop summary)
 
 ### Commute Back d6
+
+For this check only, apply Exhaustion before rolling:
+
+- Maximum dice = `ceil(Battery / 20)`
+- Roll the lower of your chosen pool and that cap
 
 | Roll | Prompt |
 | --- | --- |
@@ -150,26 +155,16 @@ This inversion is intentional.
 | 5 | You doom-scroll and consume your remaining focus. |
 | 6 | You choose stillness over stimulation and recover slightly. |
 
-### Anchor d6
+### Recharge (H)
 
-| Roll | Prompt |
-| --- | --- |
-| 1 | You complete a tiny ritual and feel real again. |
-| 2 | You forget your ritual and drift. |
-| 3 | A special interest absorbs you and time softens. |
-| 4 | You attempt regulation but external noise breaks it. |
-| 5 | You ask for support and receive partial relief. |
-| 6 | You document the day and reclaim the narrative. |
+- Roll d100 at the end of the loop.
+- If the roll is higher than your current Battery, your Battery resets to that number for the next loop.
+- If the roll is equal to or lower than current Battery, Battery carries over unchanged.
 
-### Bed (Return) d6
+### Receipt Printing (I)
 
-| Roll | Prompt |
-| --- | --- |
-| 1 | Sleep does not come; loop fragments repeat. |
-| 2 | You crash instantly and wake disoriented. |
-| 3 | You rehearse tomorrow's mask before closing your eyes. |
-| 4 | You set one intention for the next loop. |
-| 5 | You dream of the door to March 1st. |
-| 6 | You sleep deeply and wake with one preserved truth. |
+- Produce a short summary of the completed loop.
+- Include final Battery, final Stability, total Successes, and total Glitches.
+- This is the Bed phase fictionally, but mechanically it is your loop receipt.
 
-Use these prompts as optional generators. Players can always override with custom flavor.
+Use prompt tables as optional generators. Players can always override with custom flavor.

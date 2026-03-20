@@ -75,28 +75,31 @@ permalink: /character-sheet/
         <th>Loop</th>
         <th>End Battery</th>
         <th>End Stability</th>
+        <th>Successes</th>
+        <th>Glitches</th>
         <th>SIP Total</th>
-        <th>Notes</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td>1</td><td>____</td><td>____</td><td>____</td><td>________________________</td></tr>
-      <tr><td>2</td><td>____</td><td>____</td><td>____</td><td>________________________</td></tr>
-      <tr><td>3</td><td>____</td><td>____</td><td>____</td><td>________________________</td></tr>
-      <tr><td>4</td><td>____</td><td>____</td><td>____</td><td>________________________</td></tr>
-      <tr><td>5</td><td>____</td><td>____</td><td>____</td><td>________________________</td></tr>
+      <tr><td>1</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td></tr>
+      <tr><td>2</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td></tr>
+      <tr><td>3</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td></tr>
+      <tr><td>4</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td></tr>
+      <tr><td>5</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td></tr>
     </tbody>
   </table>
 
   <h2>Objective Sequence</h2>
-  <p>Awakening: A, B, C | Commute: D, E, F | Interview: S, T, A, R | Return: G, H, I</p>
+  <p>Awakening: A, B, C | Commute: D, E, F | Interview: S, T, A, R | Return: G (Commute Back), H (Recharge), I (Receipt Printing)</p>
 
   <h2>Resolution Reminder</h2>
   <ul>
     <li>Roll pool d6s + Goddess die.</li>
+    <li>Exhaustion cap applies only to Return G (Commute Back): max dice = ceil(Battery / 20).</li>
     <li>13+ is Success Trap: Stability +5 per player die rolled.</li>
     <li>Below 13 is Glitch: Stability -5 per player die rolled.</li>
     <li>Result (R): d100 + d100, below Stability is safe.</li>
+    <li>Recharge (H): roll d100; if above current Battery, next-loop Battery becomes that roll.</li>
   </ul>
 </div>
 

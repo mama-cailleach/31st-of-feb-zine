@@ -1,11 +1,14 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "game_id": "31st-of-february",
   "core_rules": {
     "dc": 13,
     "objective_battery_cost": 5,
     "stability_step_per_die": 5,
     "exhaustion_divisor": 20,
+    "exhaustion_applies_to": ["RT_G"],
+    "recharge_roll": "d100",
+    "recharge_rule": "If recharge roll is higher than current Battery, set next-loop Battery to the roll.",
     "loop_reset_mode": "auto",
     "loop_break_condition": "stability_zero",
     "stability_floor": 0,
@@ -264,6 +267,7 @@
       "season_id": "return",
       "default_pool": "sns",
       "pool_options": ["msk", "sns", "log"],
+      "exhaustion_applies": true,
       "prompt_die": "d6",
       "prompts": [
         "You replay every sentence and cannot stop auditing.",
@@ -276,35 +280,18 @@
     },
     "RT_H": {
       "symbol": "H",
-      "name": "Anchor",
+      "name": "Recharge",
       "season_id": "return",
-      "default_pool": "log",
-      "pool_options": ["msk", "sns", "log"],
-      "prompt_die": "d6",
-      "prompts": [
-        "You complete a tiny ritual and feel real again.",
-        "You forget your ritual and drift.",
-        "A special interest absorbs you and time softens.",
-        "You attempt regulation but external noise breaks it.",
-        "You ask for support and receive partial relief.",
-        "You document the day and reclaim the narrative."
-      ]
+      "special_check": "d100_recharge",
+      "recharge_mode": "if_roll_higher_set_next_loop_battery",
+      "rules_text": "Roll d100 at loop end. If the roll is higher than current Battery, next-loop Battery becomes that roll."
     },
     "RT_I": {
       "symbol": "I",
-      "name": "Bed",
+      "name": "Receipt Printing",
       "season_id": "return",
-      "default_pool": "sns",
-      "pool_options": ["msk", "sns", "log"],
-      "prompt_die": "d6",
-      "prompts": [
-        "Sleep does not come; loop fragments repeat.",
-        "You crash instantly and wake disoriented.",
-        "You rehearse tomorrow's mask before closing your eyes.",
-        "You set one intention for the next loop.",
-        "You dream of the door to March 1st.",
-        "You sleep deeply and wake with one preserved truth."
-      ]
+      "special_check": "loop_receipt_summary",
+      "rules_text": "Record loop summary with final Battery, final Stability, total Successes, and total Glitches."
     }
   }
 }

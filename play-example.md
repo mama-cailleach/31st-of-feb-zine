@@ -51,7 +51,10 @@ Continue through all stations.
 
 At end of loop:
 
-- If Stability is above 0%, loop auto-resets and SIP +1.
+- Commute Back (`RT_G`) uses Exhaustion: max dice is `ceil(Battery / 20)` for that check only.
+- Recharge (`RT_H`): roll d100. If it is higher than current Battery, next-loop Battery becomes that value.
+- Receipt Printing (`RT_I`): record final Battery, final Stability, total Successes, and total Glitches.
+- If Stability is above 0%, loop resets and SIP +1.
 - If Stability is 0%, the loop breaks.
 
 Loop carryover example:

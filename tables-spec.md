@@ -31,7 +31,13 @@ Each objective includes:
 - suggested `default_pool`
 - `pool_options`
 - optional `prompt_die` + `prompts`
-- optional `special_check` metadata (for Interview Result)
+- optional `special_check` metadata (Interview Result, Return Recharge, Return Receipt Printing)
+
+Return station specifics:
+
+- `RT_G` (Commute Back) is the only check that applies Exhaustion dice capping.
+- `RT_H` (Recharge) is a d100 check with battery carryover rules.
+- `RT_I` (Receipt Printing) records loop summary output, including Success and Glitch counts.
 
 ## Data Targets
 
