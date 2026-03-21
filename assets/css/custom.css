@@ -259,4 +259,11 @@ pre code {
     color: #000;
     text-decoration: none;
   }
+
+
+  .side-bar + .main .main-header {
+    display: flex;
+    background-color: #191a1f;
+  }
+
 }
