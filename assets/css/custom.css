@@ -20,6 +20,8 @@ body {
 
 .site-header,
 .site-footer,
+.main-header,
+.side-bar,
 .post-content,
 .page-content {
   border-color: var(--line);
@@ -37,6 +39,32 @@ body {
 .site-header,
 .site-footer {
   background: rgba(18, 19, 24, 0.9);
+}
+
+.main-header {
+  background: rgba(18, 19, 24, 0.9);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.side-bar {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.85rem 0.9rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
+}
+
+.side-bar a,
+.side-bar a:visited {
+  color: var(--text);
+}
+
+.side-bar a:hover,
+.side-bar a:focus-visible {
+  color: var(--accent);
 }
 
 .site-title,
@@ -206,8 +234,8 @@ pre code {
 
 @media print {
   body {
-    background: #fff;
-    color: #000;
+    background: #121318;
+    color: #e8e5d7;
     font-size: 12pt;
     font-family: "Times New Roman", serif;
   }
