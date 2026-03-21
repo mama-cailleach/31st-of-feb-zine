@@ -4,11 +4,10 @@
   "core_rules": {
     "dc": 13,
     "objective_battery_cost": 5,
+    "battery_reboot_value": 60,
     "stability_step_per_die": 5,
     "exhaustion_divisor": 20,
-    "exhaustion_applies_to": [
-      "RT_G"
-    ],
+    "exhaustion_applies_to": ["B"],
     "recharge_roll": "d100",
     "recharge_rule": "If recharge roll is higher than current Battery, set next-loop Battery to the roll.",
     "loop_reset_mode": "auto",
@@ -35,11 +34,6 @@
         "table": "random_flavor_tables.big_book_of_glitches",
         "die": "d20",
         "selector": "single_entry"
-      },
-      "equal_dc_overlay": {
-        "table": "random_flavor_tables.big_book_of_glitches",
-        "trigger": "total_equals_dc",
-        "stability_penalty": 10
       }
     }
   },
@@ -56,11 +50,7 @@
       "label": "Logic",
       "description": "Systems, routines, literal truths"
     },
-    "creation_values": [
-      1,
-      2,
-      3
-    ],
+    "creation_values": [1, 2, 3],
     "assignment_mode": "assign_once"
   },
   "sip_rules": {
@@ -113,60 +103,39 @@
       "effect": "system failure"
     }
   ],
-  "seasons": [
+  "stations": [
     {
       "id": "awakening",
       "label": "Awakening",
       "order": 1,
-      "objectives": [
-        "AW_A",
-        "AW_B",
-        "AW_C"
-      ]
+      "objectives": ["D", "O", "W"]
     },
     {
       "id": "commute",
       "label": "Journey",
       "order": 2,
-      "objectives": [
-        "CM_D",
-        "CM_E",
-        "CM_F"
-      ]
+      "objectives": ["G", "L", "Y"]
     },
     {
       "id": "interview",
       "label": "Interview",
       "order": 3,
-      "objectives": [
-        "IN_S",
-        "IN_T",
-        "IN_A",
-        "IN_R"
-      ]
+      "objectives": ["S", "T", "A", "R"]
     },
     {
       "id": "return",
       "label": "Return",
       "order": 4,
-      "objectives": [
-        "RT_G",
-        "RT_H",
-        "RT_I"
-      ]
+      "objectives": ["B", "U", "M"]
     }
   ],
   "objective_catalog": {
-    "AW_A": {
+    "D": {
       "symbol": "D",
       "name": "Bed",
-      "season_id": "awakening",
+      "station_id": "awakening",
       "default_pool": "sns",
-      "pool_options": [
-        "msk",
-        "sns",
-        "log"
-      ],
+      "pool_options": ["msk", "sns", "log"],
       "prompt_die": "d6",
       "prompts": [
         "You wake from a loop memory and lose your words.",
@@ -177,16 +146,12 @@
         "You wake with unusual clarity and name one true need."
       ]
     },
-    "AW_B": {
+    "O": {
       "symbol": "O",
       "name": "Mirror",
-      "season_id": "awakening",
+      "station_id": "awakening",
       "default_pool": "msk",
-      "pool_options": [
-        "msk",
-        "sns",
-        "log"
-      ],
+      "pool_options": ["msk", "sns", "log"],
       "prompt_die": "d6",
       "prompts": [
         "You do the expected face and hate how easy it is.",
@@ -197,16 +162,12 @@
         "You let one visible glitch stay visible."
       ]
     },
-    "AW_C": {
+    "W": {
       "symbol": "W",
       "name": "Fuel",
-      "season_id": "awakening",
+      "station_id": "awakening",
       "default_pool": "sns",
-      "pool_options": [
-        "msk",
-        "sns",
-        "log"
-      ],
+      "pool_options": ["msk", "sns", "log"],
       "prompt_die": "d6",
       "prompts": [
         "You forget to eat and run on friction.",
@@ -217,16 +178,12 @@
         "You eat slowly and feel almost present."
       ]
     },
-    "CM_D": {
+    "G": {
       "symbol": "G",
       "name": "Connection",
-      "season_id": "commute",
+      "station_id": "commute",
       "default_pool": "log",
-      "pool_options": [
-        "msk",
-        "sns",
-        "log"
-      ],
+      "pool_options": ["msk", "sns", "log"],
       "prompt_die": "d6",
       "prompts": [
         "A delay collapses your timing and rewrites your route.",
@@ -237,16 +194,12 @@
         "You sync with the flow and arrive with spare energy."
       ]
     },
-    "CM_E": {
+    "L": {
       "symbol": "L",
       "name": "Interaction",
-      "season_id": "commute",
+      "station_id": "commute",
       "default_pool": "msk",
-      "pool_options": [
-        "msk",
-        "sns",
-        "log"
-      ],
+      "pool_options": ["msk", "sns", "log"],
       "prompt_die": "d6",
       "prompts": [
         "A stranger requests small talk and your script lags.",
@@ -257,16 +210,12 @@
         "You find one kind person and borrow their calm."
       ]
     },
-    "CM_F": {
+    "Y": {
       "symbol": "Y",
       "name": "Environment",
-      "season_id": "commute",
+      "station_id": "commute",
       "default_pool": "sns",
-      "pool_options": [
-        "msk",
-        "sns",
-        "log"
-      ],
+      "pool_options": ["msk", "sns", "log"],
       "prompt_die": "d6",
       "prompts": [
         "Lighting hum drills into your concentration.",
@@ -277,16 +226,12 @@
         "Conditions stay stable long enough to think clearly."
       ]
     },
-    "IN_S": {
+    "S": {
       "symbol": "S",
       "name": "Situation",
-      "season_id": "interview",
+      "station_id": "interview",
       "default_pool": "log",
-      "pool_options": [
-        "msk",
-        "sns",
-        "log"
-      ],
+      "pool_options": ["msk", "sns", "log"],
       "prompt_die": "d6",
       "prompts": [
         "The interviewer asks for an origin story you have rehearsed too many times.",
@@ -297,16 +242,12 @@
         "You are asked why you want this role, and the true answer is dangerous."
       ]
     },
-    "IN_T": {
+    "T": {
       "symbol": "T",
       "name": "Task",
-      "season_id": "interview",
+      "station_id": "interview",
       "default_pool": "log",
-      "pool_options": [
-        "msk",
-        "sns",
-        "log"
-      ],
+      "pool_options": ["msk", "sns", "log"],
       "prompt_die": "d6",
       "prompts": [
         "Translate your real process into market-safe language.",
@@ -317,16 +258,12 @@
         "Reframe a shutdown as a strategic pause."
       ]
     },
-    "IN_A": {
+    "A": {
       "symbol": "A",
       "name": "Action",
-      "season_id": "interview",
+      "station_id": "interview",
       "default_pool": "msk",
-      "pool_options": [
-        "msk",
-        "sns",
-        "log"
-      ],
+      "pool_options": ["msk", "sns", "log"],
       "prompt_die": "d6",
       "prompts": [
         "You perform the expected answer exactly and lose yourself in it.",
@@ -337,25 +274,22 @@
         "You improvise a hybrid answer and surprise everyone, including yourself."
       ]
     },
-    "IN_R": {
+    "R": {
       "symbol": "R",
       "name": "Result",
-      "season_id": "interview",
-      "special_check": "d100_plus_d100_below_stability",
-      "result_check_mode": "below_stability_is_glitch",
-      "rules_text": "Roll d100 (Player) + d100 (The OS). Below current Stability glitches; equal or above is safe."
+      "station_id": "interview",
+      "special_check": "result_single_d100_tiered_penalty",
+      "result_check_mode": "single_d100_tiered_stability_penalty",
+      "rules_text": "Roll one d100 (Player). If equal or above current Stability, no penalty. If below, apply -10% Stability when the difference is under 50; otherwise apply -20% Stability."
     },
-    "RT_G": {
+    "B": {
       "symbol": "B",
       "name": "Commute Back",
-      "season_id": "return",
+      "station_id": "return",
       "default_pool": "sns",
-      "pool_options": [
-        "msk",
-        "sns",
-        "log"
-      ],
+      "pool_options": ["msk", "sns", "log"],
       "exhaustion_applies": true,
+      "rules_text": "Roll Commute using battery-based dice: 100%=6d6, 81-99%=5d6, 61-80%=4d6, 41-60%=3d6, 21-40%=2d6, 1-20%=1d6.",
       "prompt_die": "d6",
       "prompts": [
         "You replay every sentence and cannot stop auditing.",
@@ -363,26 +297,60 @@
         "A delay forces unplanned contact.",
         "You find silence and your nervous system descends one level.",
         "You doom-scroll and consume your remaining focus.",
-        "You choose stillness over stimulation and recover slightly."
+        "You choose stillness over stimulation to recover slightly."
       ]
     },
-    "RT_H": {
+    "U": {
       "symbol": "U",
       "name": "Recharge",
-      "season_id": "return",
+      "station_id": "return",
       "special_check": "d100_recharge",
       "recharge_mode": "if_roll_higher_set_next_loop_battery",
       "rules_text": "Roll d100 at loop end. If the roll is higher than current Battery, next-loop Battery becomes that roll."
     },
-    "RT_I": {
+    "M": {
       "symbol": "M",
       "name": "Receipt Printing",
-      "season_id": "return",
+      "station_id": "return",
       "special_check": "loop_receipt_summary",
       "rules_text": "Record loop summary with final Battery, final Stability, total Successes, and total Glitches."
     }
   },
   "random_flavor_tables": {
+    "station_prompts": {
+      "awakening": [
+        "Okay, campers, rise and shine! And don't forget your booties 'cause it's cold out there today.",
+        "It's cold out there every day. What is this, Miami Beach? Not hardly.",
+        "Okay, campers, rise and shine! And don't forget your booties 'cause it's cold out there today.",
+        "That's right, woodchuck chukers. It's February 31st! Get up and check that hog!",
+        "Then put your little hand in mine. There ain't no hill or mountain we can't climb. I got you babe",
+        "Okay, campers, rise and shine! And don't forget your booties 'cause it's cold out there today."
+      ],
+      "journey": [
+        "The streets are a sea of grey suits. The NPCs are moving in perfect sync. The air smells like stagnant coffee.",
+        "RENDERING_CROWD | STATIC_TRANSIT | SOCIAL_BUFFERING | AUDITORY_LOOP",
+        "You are a face in the crowd, but the crowd is also inside you.",
+        "The world is a vampire, but it's also your home. You feel a strange mix of detachment and familiarity.",
+        "The path ahead seems to stretch infinitely. You are walking, but the horizon never moves.",
+        "You are surrounded by people, but they are all Idle. They stand perfectly still until they snap into a scripted motion."
+      ],
+      "interview": [
+        "It's a formal setting. The Interviewers expect you to maintain the mask while they dissect you.",
+        "The room is tiny, packed with towers of paper that reach the ceiling. The interviewer is a voice coming from a speaker on the wall.",
+        "There are no walls, only a desk and two chairs in a boundless, glowing white space.",
+        "You sit at a glass table. The interviewers are three identical figures in silhouette. You can see your own reflection in their faces.",
+        "The interviewers are friendly and warm, but you can't shake the feeling that they are not entirely real.",
+        "You get to the council building and have a seat. The waiting area is filled with other candidates, but they all look like mannequins."
+      ],
+      "return": [
+        "You push through the revolving door, but it takes three full rotations before it finally spits you out onto the street.",
+        "The air outside is cold and synthetic, like the inside of a refrigerator. The sky is a flat, featureless gray.",
+        "You stand on the curb, there is no fire and no smoke. Only the orange glow of LEDs.",
+        "As you cross the building's shadow, the sky changes color instantly from office-fluorescent to a bruised, purple twilight.",
+        "The concrete outside the office is vast and empty. A single, crumpled flyer blows across the ground in a perfect, repeating circle.",
+        "6"
+      ]
+    },
     "architecture_of_success": {
       "die": "d12",
       "description": "When you succeed, roll on the matching pool table to see how The OS renders your victory.",
@@ -457,7 +425,43 @@
         "STUTTER-STEP: You are stuck in a walking animation but are not moving.",
         "THE MONITOR: You see a giant, pixelated eye watching from a window.",
         "DATA BLEED: Fragments of another candidate's memory overlay your own for a moment.",
-        "KERNEL PANIC: The scene freezes, alarms blare, and the loop hard-resets with no transition."
+        "KERNEL PANIC: The scene freezes, alarms blare, and the system hard-resets to where you were."
+      ]
+    },
+    "commute_back_success": {
+      "die": "d6",
+      "usage": "commute_back_success_flavor",
+      "entries": [
+        "You made it out unscathed, but the world feels a little grayer.",
+        "You find a small moment of distraction that makes you forget why you endure this.",
+        "You treat yourself to a small comfort and it feels like a luxury.",
+        "You feel a sense of accomplishment despite the challenges and the lack of energy.",
+        "You arrive home and take a moment to appreciate the simple things and pretty patterns.",
+        "You reflect on the day's events to process and feel a bit more grounded."
+      ]
+    },
+    "recharge_prompts": {
+      "die": "d6",
+      "usage": "recharge_prompt_flavor",
+      "entries": [
+        "You feel depleted but grateful for the chance to rest, finally.",
+        "You are too wired to rest, but you try anyway and it feels like a waste of time.",
+        "You have a brief moment of peace, but it slips away as you worry about the next loop.",
+        "You manage to find some time to rest and it feels restorative, but you know it won't last.",
+        "(silence)",
+        "You take what you can get and it feels like a small victory, even if it's not enough."
+      ]
+    },
+    "battery_zero_events": {
+      "die": "d6",
+      "usage": "battery_zero_hard_reset_flavor",
+      "entries": [
+        "HARD POWER-OFF: Your vision clips to black mid-step. You wake up instantly sitting upright in bed, heart racing, with the taste of copper in your mouth.",
+        "MEMORY LEAK: As you collapse, you see the last 24 hours playing backward at 10x speed. You wake up with a crushing headache and a vague sense of deja vu.",
+        "FRAGMENTED AWAKENING: You wake up, but the room is wrong. The furniture is shifted two inches to the left. It takes a moment for the OS to 'snap' the room back into place.",
+        "GHOST AUDIO: You don't wake up to an alarm; you wake up to the sound of your own voice screaming from the hallway. When you look, the hallway is empty.",
+        "BUFFER OVERFLOW: You wake up covered in 'Digital Sweat' - a layer of glowing, translucent hex-code that evaporates as soon as you touch it.",
+        "KERNEL PANIC: You wake up 5 minutes before the alarm. For 300 seconds, you are the only thing rendered in a pitch-black void. Then, the room 'pops' into existence."
       ]
     }
   }

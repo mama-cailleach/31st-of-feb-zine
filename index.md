@@ -4,25 +4,41 @@ title: 31st of February
 permalink: /
 ---
 
-A solo glitch-loop RPG.
+A glitch-loop roleplaying game about one impossible date.
 
-The date never changes. The interview never ends. Your goal is to lower Stability to 0% and break out.
+The day repeats.
+The interview repeats.
+You repeat, until something breaks.
 
-At the end of each loop, resolve Recharge (d100) and then print a loop receipt with final Battery, final Stability, total Successes, and total Glitches.
+This zine is the simple reference edition.
+Use it to play fast, track clearly, and look up rules in seconds.
 
-## Start Here
+## Table of Contents
 
-- [Character Creation](character-creation/)
-- [Printable Character Sheet](character-sheet/)
-- [Core Mechanics](mechanics/)
-- [Stations and Tables](stations/)
-- [Play Example](play-example/)
 - [Lore](lore/)
-- [Game Tables Spec](tables-spec/)
-- [Data Reference (Live from JSON)](data-reference/)
+	World tone, simulation pressure, and who the Candidate is.
+- [Game Modes](game-modes/)
+	Three ways to play: journaling, terminal solo, or single player with a DM.
+- [Character Sheet](character-sheet/)
+	What to write down, how to build your character, and what to track each loop.
+- [Game Mechanics](game-mechanics/)
+	The main play loop in plain language.
+- [Stations](stations/)
+	Every station and every objective in order.
+- [Dice Tables](dice-tables/)
+	What to roll, when to roll, and all threshold tables.
+- [Random Tables](random-tables/)
+	Prompt and flavor tables grouped by trigger.
+- [Extra Rules](extra-rules/)
+	Optional modules for longer campaigns and variants.
+- [Terminal](terminal/)
+	Command guide and quick-start flow for the terminal version.
+- [About](about/)
+	Credits, links, and project notes.
 
-## Current Project Status
+## One-Line Objective
 
-- Web zine is the source of truth for rules and tables.
-- Companion program will use embedded data from these pages.
-- Physical zine is a post-jam output from this markdown content.
+Move through all stations.
+Survive the loop.
+Track Battery, Stability, Successes, and Glitches.
+Keep playing until your story reaches the ending you want.
