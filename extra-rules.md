@@ -4,74 +4,39 @@ title: Extra Rules
 permalink: /extra-rules/
 ---
 
-Optional modules.
-Not part of base canon defaults.
+Optional rules.
+Not part of how the terminal runs it.
 
 ## How to Use This Page
 
-Pick 1 to 2 modules max for a session.
-Keep core rules unchanged unless module says otherwise.
+Here are some ideas for tweaks and other rules that can be adapted in game as you wish
 
-## Module Ideas
+## Ideas
 
-### 1) Memory Scars
+### 1) Variable DC
 
-When a hard reset happens:
+- Instead of having the fixed DC 13, every beggining of a new loop roll a d20 to set that day's DC.
 
-- Add one Memory Scar tag
-- Each tag is a short phrase
-- Tag must appear in next station narration
+### 2) Fixed Stat Roll
 
-Example tags:
+- To have the Loop be more repetitive, ask for the same stat roll on specific objectives. 
 
-- fluorescent hum
-- missing hour
-- copied voice
+### 3) Special Interest Battery
 
-### 2) Interview Heat
+When using SIP, besides cancelling the OS die:
 
-After each Interview objective (S, T, A, R):
+- If Success also gain battery (extra 5% for each die)
+- If Glitch also loose battery (minus 5% each die)
 
-- Add 1 Heat
-- At 3 Heat, add one extra glitch flavor line to the scene
-- Reset Heat to 0 at station change
+### 4) Different Die
 
-### 3) Comfort Anchors
+Instead of just rolling d6 for the stats player (or DM) can choose other dies instead:
 
-At character setup:
+- 2d6 = 1d12 = 3d4
+- 3d6 = 1d20(If 19 or 20 reroll, or crit and gain more stability) 
 
-- Write 2 Comfort Anchors
-- Once per loop, invoke one anchor for narrative relief
-- Mechanical option: recover 1 Battery (optional)
-
-### 4) Witness NPC
-
-Create one recurring NPC observer.
-
-- Give them 1 tell, 1 contradiction, 1 hidden motive
-- They appear once per station
-- They may be ally, monitor, or projection
-
-### 5) Loop Debt
-
-At loop end, if Glitches > Successes:
-
-- Gain 1 Debt mark
-- Each Debt mark adds social pressure in next Awakening scene
-- Clear 1 Debt when a full loop ends with more Successes than Glitches
-
-## Design Notes For Future Expansion
-
-Ideas to add later:
-
-- multi-candidate mode
-- faction play
-- persistent city map overlays
-- alternate OS personalities
-- epilogue generators
 
 ## Reminder
 
-Base game first.
-Optional rules second.
-Use extras only when everyone wants more complexity.
+Feel free to freestyle and modify whatever you want. Let me know how it goes!
+
