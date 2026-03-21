@@ -38,11 +38,11 @@ body {
 
 .site-header,
 .site-footer {
-  background: rgba(18, 19, 24, 0.9);
+  background: var(--surface-soft);
 }
 
 .main-header {
-  background: rgba(18, 19, 24, 0.9);
+  background: var(--surface-soft);
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 0.8rem 1rem;
@@ -57,6 +57,16 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
 }
 
+.search-active 
+.search-input 
+.search-results {
+  background-color: var(--surface);
+}
+
+.search-input 
+.search-results {
+  color: var(--text);
+}
 .side-bar a,
 .side-bar a:visited {
   color: var(--text);
