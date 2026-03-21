@@ -4,7 +4,15 @@ title: Random Tables
 permalink: /random-tables/
 ---
 
-Flavor tables by trigger, with full entries.
+Flavor random tables by trigger, with full entries.
+
+These are the tables currenttly used by the Terminal. 
+
+They are meant to be used for inspiration or if you don't want to think.
+
+But players and DMs are encourage to create their own or modify and expand upon this tables. 
+
+They are a north, and a way to guide the game. But in no way they are to be taken as gospel.
 
 ## A) Station Prompts
 
@@ -250,4 +258,5 @@ Use these before each objective roll/check.
 
 ### R, U, M
 
-These objectives use special checks and do not have prompt tables.
+- These objectives use special checks and do not have prompt tables.
+- Feel free to include whatever you want 
