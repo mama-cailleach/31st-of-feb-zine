@@ -7,6 +7,8 @@ permalink: /terminal/
 Terminal play guide.
 Simple and fast.
 
+Play it from: https://mama666.itch.io/31st-of-february
+
 ## What the Terminal Does
 
 - Displays prompts and station flow

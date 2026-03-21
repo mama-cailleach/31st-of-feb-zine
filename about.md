@@ -4,46 +4,32 @@ title: About
 permalink: /about/
 ---
 
-31st of February is a glitch-loop roleplaying project.
+31st of February is a glitch-loop roleplaying project made in a few days for [Pizza Jam 16](https://itch.io/jam/pizza-jam-pizza-prize-16).
+
+There are a lot of loose ends, and unpolished ideas. 
+
+But felt nice to bash out something and start testing some ttrpg mechanics that have been in my head.
 
 ## Project
 
-- Theme: repetition, performance pressure, identity strain
-- Format: solo-first RPG with multiple play modes
+- Theme: repetition, performance pressure, identity strain, burnout
+- Format: single player RPG with multiple play modes
 - Components: web zine + terminal game
 
 ## Credits
 
-Fill in:
-
-- Design: [Your Name]
-- Writing: [Your Name]
-- Development: [Your Name]
-- Playtesting: [Names]
+Game by mama
 
 ## Links
 
-Placeholders:
-
-- Project page: [Add URL]
-- Itch page: [Add URL]
-- Source repository: [Add URL]
-- Social links: [Add URL]
-
-## License
-
-Choose and add:
-
-- Game text license: [Add License]
-- Code license: [Add License]
+- Itch page: https://mama666.itch.io/31st-of-february
 
 ## Contact
 
-Add preferred contact method:
+Let me know what you think :)
 
-- Email: [Add Email]
-- Website: [Add URL]
+- Email: marcelo.terreiro@gmail.com
 
 ## Thanks
 
-Thanks to everyone who tested loops, gave feedback, and helped shape this weird date into a playable form.
+Thank you for playing and James for convincing me to participate in the jam.

@@ -28,6 +28,7 @@ Best for fast mechanical play.
 - Export transcript when done.
 
 Use this mode if you want speed, structure, and fewer manual steps.
+Access the terminal from the itch game page: https://mama666.itch.io/31st-of-february 
 
 ## 3) Single Player With a DM
 
@@ -39,37 +40,15 @@ Best for guided scenes.
 - Candidate chooses rolls and outcomes.
 - DM interprets glitches and success flavor in fiction.
 
-Use this mode if you want dialogue, improvisation, and dramatic pressure.
+Use this mode if you want dialogue, improvisation, collaborative storytelling and dramatic pressure.
 
 ## What Never Changes
 
-These are always core:
+Nothing, anything can change if you want.
 
-- Station order.
-- Objective order.
-- DC 13 for standard checks.
-- Battery cost per resolved objective.
-- Stability changes from roll outcomes.
-- Special checks for Result, Recharge, and Receipt.
-
-## Session Length
-
-Quick play:
-
-- 1 to 2 loops.
-- 45 to 90 minutes.
-
-Long play:
-
-- 3 to 6 loops.
-- 2 to 4 hours.
 
 ## Safety and Tone
 
-Suggested tools:
-
-- Lines and veils.
-- Pause and rewind.
-- Open-door break policy.
+Suggested tools: https://ttrpgsafetytoolkit.com/ 
 
 This game includes burnout themes, social pressure, and identity strain. Play with care.

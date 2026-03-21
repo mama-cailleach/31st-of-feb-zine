@@ -10,27 +10,29 @@ Track only what matters.
 
 Write:
 
-- Candidate Name
-- Archetype
+- Candidate Name/Pronouns
+- Archetype/Stats
 - Loop Number
+
+For layout ideas use the Terminal header.
 
 ## Core Stats
 
-### Battery
+### Candidate Battery
 
 - Range: 0 to 100
 - Represents available energy
 - Usually decreases by 5 per resolved objective
 - If Battery reaches 0, hard reboot triggers
 
-### Stability
+### Stability Success Probability
 
 - Range: 0 to 100
 - Represents how stable your simulation state is
 - Changes after most checks based on dice count
 - If Stability reaches 0, game over
 
-### SIP
+### Special Interest Points
 
 - Starts at 0
 - Gain +1 after each completed loop
@@ -39,7 +41,7 @@ Write:
 
 ## Dice Pools
 
-Assign one of each value: 1, 2, 3
+Assign one of each value of: 1, 2, 3
 
 - MSK (Masking): social performance and expected behavior
 - SNS (Sensory): body load, noise, regulation
@@ -51,7 +53,7 @@ Archetype presets:
 - System Strategist: MSK 1, SNS 2, LOG 3
 - Tension Runner: MSK 2, SNS 3, LOG 1
 
-## Objective Tracking
+## Objective Tracking (optional)
 
 For each objective, note:
 
@@ -62,7 +64,9 @@ For each objective, note:
 - Total result
 - Outcome: Success or Glitch
 
-## Loop Totals
+* The Terminal tracks this and can be fun in a solo play.
+
+## Loop Totals (optional)
 
 Track cumulative:
 
@@ -70,6 +74,8 @@ Track cumulative:
 - Total Glitches
 - Final Battery at loop end
 - Final Stability at loop end
+
+* The Terminal tracks this and can be fun in a solo play.
 
 ## Suggested Sheet Sections
 

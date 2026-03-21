@@ -16,7 +16,7 @@ Unless you decide to be something unindexable.
 
 ## World Frame
 
-The date is fixed: 31st of February.
+The date is fixed: Tuesday, 31st of February 2026.
 
 The city runs on compliance metrics, mood smoothing, and ritual repetition. The OS is the system voice that rewards script-perfect behavior and punishes deviation. To escape, you must destabilize what the simulation expects from you.
 
@@ -43,20 +43,7 @@ It is a behavior engine.
 - It sabotages you when your stability drops.
 - It talks through systems, signage, routines, and social pressure.
 
-In play terms, the OS appears as an extra die modifier tied to Stability.
-
-## Main Figures Around You
-
-These are role slots. Rename them freely.
-
-- Interviewer Unit
-	One person, a panel, or an impossible voice from a speaker.
-- Transit Crowd
-	NPC flow on the Journey station. Sometimes human, sometimes idle animation.
-- Quiet Witness
-	A stranger who briefly helps you regulate.
-- Compliance Echo
-	The internalized voice that says, Be easy. Be efficient. Be acceptable.
+In play terms, the OS appears as an extra die modifier tied to the Stability Success Probability.
 
 ## Tone Guide
 
@@ -69,7 +56,7 @@ These are role slots. Rename them freely.
 
 In this setting, a glitch is both danger and signal.
 
-- Danger: your systems are straining.
+- Danger: systems are straining.
 - Signal: the simulation is not complete control.
 - Story prompt: each glitch shows where the world is thin.
 
@@ -81,3 +68,4 @@ Use glitches as narrative truth leaks.
 - The interview role may not exist at all.
 - Some Candidates remember previous loops clearly.
 - The calendar itself might be the final boss.
+- Is the simulation the real interview?

@@ -35,6 +35,12 @@ Instead of just rolling d6 for the stats player (or DM) can choose other dies in
 - 2d6 = 1d12 = 3d4
 - 3d6 = 1d20(If 19 or 20 reroll, or crit and gain more stability) 
 
+### 5) Rounding
+
+- Rounding is your friend, especially for battery and stability to make it simple.
+- But not rounding is fun too!
+- I guess, being consistent with the choice here is my only advice.
+
 
 ## Reminder
 
