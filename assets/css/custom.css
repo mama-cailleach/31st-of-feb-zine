@@ -232,6 +232,13 @@ pre code {
   color: var(--muted);
 }
 
+@media (min-width: 50rem) {
+  .side-bar+.main .main-header {
+    display:flex;
+    background-color:#121318;
+  }
+}
+
 @media print {
   body {
     background: #121318;
@@ -259,11 +266,4 @@ pre code {
     color: #000;
     text-decoration: none;
   }
-
-
-  .side-bar + .main .main-header {
-    display: flex;
-    background-color: #191a1f;
-  }
-
 }
