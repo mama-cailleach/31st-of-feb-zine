@@ -41,6 +41,15 @@ body {
   background: var(--surface-soft);
 }
 
+.site-header {
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+}
+
+.site-header .wrapper {
+  min-height: 168px;
+}
+
 .main-header {
   background: var(--surface-soft);
   border: 1px solid var(--line);
@@ -81,7 +90,7 @@ body {
 .site-title:visited {
   display: block;
   width: min(100%, 640px);
-  height: 140px;
+  height: 156px;
   background: url("../img/cover.png") center / contain no-repeat;
   color: transparent;
   font-size: 0;
