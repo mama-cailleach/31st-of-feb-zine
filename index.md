@@ -12,8 +12,8 @@ The day repeats.
 The interview repeats.
 You repeat, until something breaks.
 
-This zine is the simple reference edition.
-Use it to play fast, track clearly, and look up rules in seconds.
+This webzine is a guide, do what you want with it.
+Use it to play, track, look up rules and tables or break everything!
 
 ## Table of Contents
 
@@ -24,15 +24,15 @@ Use it to play fast, track clearly, and look up rules in seconds.
 - [Character Sheet](character-sheet/)
 	What to write down, how to build your character, and what to track each loop.
 - [Game Mechanics](game-mechanics/)
-	The main play loop in plain language.
+	The main play loop.
 - [Stations](stations/)
 	Every station and every objective in order.
 - [Dice Tables](dice-tables/)
 	What to roll, when to roll, and all threshold tables.
 - [Random Tables](random-tables/)
-	Prompt and flavor tables grouped by trigger.
+	Prompt and flavor text tables grouped by trigger.
 - [Extra Rules](extra-rules/)
-	Optional modules for longer campaigns and variants.
+	Optional ideas for changing the gameplay.
 - [Terminal](terminal/)
 	Command guide and quick-start flow for the terminal version.
 - [About](about/)

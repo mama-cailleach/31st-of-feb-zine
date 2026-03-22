@@ -6,7 +6,7 @@ permalink: /about/
 
 31st of February is a glitch-loop roleplaying project made in a few days for [Pizza Jam 16](https://itch.io/jam/pizza-jam-pizza-prize-16).
 
-There are a lot of loose ends, and unpolished ideas. 
+There are a lot of loose ends and unpolished ideas. 
 
 But felt nice to bash out something and start testing some ttrpg mechanics that have been in my head.
 
@@ -18,18 +18,18 @@ But felt nice to bash out something and start testing some ttrpg mechanics that 
 
 ## Credits
 
-Game by mama
+Game by [mama](https://mama666.itch.io/)
 
 ## Links
 
-- Itch page: https://mama666.itch.io/31st-of-february
+- Itch page: [https://mama666.itch.io/31st-of-february](https://mama666.itch.io/31st-of-february)
 
 ## Contact
 
 Let me know what you think :)
 
-- Email: marcelo.terreiro@gmail.com
+- Email: [marcelo.terreiro@gmail.com](marcelo.terreiro@gmail.com)
 
 ## Thanks
 
-Thank you for playing and James for convincing me to participate in the jam.
+Thank you for playing and James for "convincing" me to participate in the jam.
