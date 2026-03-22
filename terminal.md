@@ -51,6 +51,12 @@ Play it from: [https://mama666.itch.io/31st-of-february](https://mama666.itch.io
 - mode auto
 - mode manual
 - manual <dice values>
+- sound on
+- sound off
+- music on
+- music off
+- sfx on
+- sfx off
 
 ## Command Meanings (Quick)
 
@@ -59,6 +65,9 @@ Play it from: [https://mama666.itch.io/31st-of-february](https://mama666.itch.io
 - sip spend: negate next OS modifier
 - print receipt: finalize loop receipt step
 - mode manual: you enter dice values yourself
+- sound on/off: global sound toggle (same as header sound button)
+- music on/off: background loop only
+- sfx on/off: terminal blips only
 
 ## Manual Dice Rules
 
@@ -109,6 +118,13 @@ If stuck:
 - type help
 - type status
 - type reset
+
+Audio control options:
+
+- use the Sound button in the terminal header for quick global toggle
+- type sound on or sound off for global sound
+- type music on/off for background music only
+- type sfx on/off for blip effects only
 
 If game is over:
 
