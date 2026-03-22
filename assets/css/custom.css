@@ -43,7 +43,7 @@ body {
 
 .site-header {
   padding-top: 0.45rem;
-  padding-bottom: 0.45rem;
+  padding-bottom: 5.5rem;
 }
 
 .site-header .wrapper {
@@ -90,7 +90,7 @@ body {
 .site-title:visited {
   display: block;
   width: min(100%, 640px);
-  height: 156px;
+  height: 164px;
   background: url("../img/cover.png") center / contain no-repeat;
   color: transparent;
   font-size: 0;
