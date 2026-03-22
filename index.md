@@ -4,6 +4,8 @@ title: 31st of February
 permalink: /
 ---
 
+![31st of February banner](/assets/img/banner.gif)
+
 A glitch-loop roleplaying game about one impossible date.
 
 The day repeats.

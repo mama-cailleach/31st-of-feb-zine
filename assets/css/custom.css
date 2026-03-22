@@ -10,8 +10,10 @@
 
 body {
   background:
-    radial-gradient(1200px 500px at 15% -10%, #2b220f, transparent),
-    radial-gradient(900px 600px at 85% 120%, #1a232c, transparent),
+    linear-gradient(rgba(8, 9, 12, 0.78), rgba(8, 9, 12, 0.78)),
+    radial-gradient(1200px 500px at 15% -10%, rgba(43, 34, 15, 0.45), transparent),
+    radial-gradient(900px 600px at 85% 120%, rgba(26, 35, 44, 0.4), transparent),
+    url("../img/bg.png") center / cover no-repeat fixed,
     var(--bg);
   color: var(--text);
   font-family: "Courier Prime", "IBM Plex Mono", "Consolas", monospace;
@@ -79,9 +81,18 @@ body {
 
 .site-title,
 .site-title:visited {
-  color: var(--accent);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  display: block;
+  width: min(100%, 640px);
+  height: 140px;
+  background: url("../img/cover.png") center / contain no-repeat;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: 0;
+  text-transform: none;
+  text-indent: -9999px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .site-nav .page-link,
